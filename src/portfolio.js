@@ -26,7 +26,7 @@ const greeting = {
     "A driven Full Stack AI Engineer and Software Developer specializing in building intelligent web applications and GenAI solutions using Python, JavaScript, React, Node.js, and the latest AI frameworks. Experienced in developing production-grade LLM-powered chatbots, cloud-native applications, and end-to-end data science projects."
   ),
   resumeLink:
-    "https://drive.google.com/file/d/1ofFdKF_mqscH8WvXkSObnVvC9kK7Ldlu/view?usp=sharing", // Set to empty to hide the button
+    "https://drive.google.com/file/d/1_zKC_Tv_1jWh_FEzV7D8TCGcp7zjQ0mo/view?usp=sharing", // Set to empty to hide the button
   displayGreeting: true // Set false to hide this section, defaults to true
 };
 
@@ -166,13 +166,13 @@ const workExperiences = {
       date: "Sep 2024 – Dec 2024",
       desc: "MIT-based startup; built LLM-powered GenAI chatbot and core app features.",
       descBullets: [
-        "Developed conversational chatbot using LLMs (RAG, knowledge graphs, agentic workflows), evaluated performance with advanced metrics, and integrated AI into production React apps.",
-        "Contributed to design and implementation of a personalized daily journal and dynamic news feed dashboard, leveraging cloud APIs and scalable backend services.",
-        "Enhanced user interaction through prompt engineering and LLM evaluation, deploying new features via CI/CD pipelines for a secure and global user base."
+        "Built a GenAI-powered assistant for women’s health, leveraging curated clinical research to provide personalized fibroid care support.",
+        "Developed a responsive dashboard and delivered full-stack LLM features, integrating backend services with a user-focused frontend.",
+        "Evaluated and deployed commercial/open-source LLMs using prompt engineering, and collaborated with stakeholders on feature strategy."
       ]
     },
     {
-      role: "Head Teaching Assistant – Graduate Natural Language Processing",
+      role: "Head Teaching Assistant – Natural Language Processing",
       company: "Northeastern University",
       companylogo: require("./assets/images/northeasternUniversityNonTransparentLogo.jpg"), // <-- Add your logo image
       date: "Sep 2023 – May 2025",
@@ -190,9 +190,9 @@ const workExperiences = {
       date: "Sep 2021 – Jan 2023",
       desc: "Full-stack development for Apple client in DevSecOps environment.",
       descBullets: [
-        "Built REST APIs and microservices using Spring Boot, Flask, and Jenkins on AWS, automating deployments and enhancing system reliability for Apple DevSecOps Portal.",
-        "Developed PostgreSQL-backed dashboards with Angular for deployment tracking; performed predictive reliability monitoring using statistical analysis.",
-        "Collaborated with Apple teams in Agile sprints; integrated Jenkins, AWS Secrets Manager, and Microsoft 365 tools across cross-platform environments."
+        "Built NLP-driven services for classification, entity recognition, and ticket routing to streamline compliance and support workflows.",
+        "Integrated ML capabilities into enterprise portals and dashboards, enhancing decision support and reducing manual review effort.",
+        "Collaborated with cross-functional teams to deploy scalable AI solutions for a Fortune 100 tech client, supporting global engineering ops."
       ]
     },
     {

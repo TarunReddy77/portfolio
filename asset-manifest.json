@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/portfolio/static/css/main.2000a402.css",
-    "main.js": "/portfolio/static/js/main.ac3257f4.js",
+    "main.js": "/portfolio/static/js/main.2edabe46.js",
     "static/css/64.bba8fa55.chunk.css": "/portfolio/static/css/64.bba8fa55.chunk.css",
     "static/js/64.5a0a3c5c.chunk.js": "/portfolio/static/js/64.5a0a3c5c.chunk.js",
     "static/css/769.b3cbb36b.chunk.css": "/portfolio/static/css/769.b3cbb36b.chunk.css",
@@ -17,8 +17,8 @@
     "static/media/northeasternUniversityNonTransparentLogo.jpg": "/portfolio/static/media/northeasternUniversityNonTransparentLogo.c68361894addcb89a4fa.jpg",
     "static/media/herheardLogo.png": "/portfolio/static/media/herheardLogo.71eddca816a7a29dc955.png",
     "static/media/northeasternLogo.png": "/portfolio/static/media/northeasternLogo.fb23fcdf5a6dd023bbec.png",
-    "static/media/resume.pdf": "/portfolio/static/media/resume.e18b0e1df08ae9c5c879.pdf",
     "static/media/nitLogo.jpg": "/portfolio/static/media/nitLogo.b6b565b959385f6e1101.jpg",
+    "static/media/resume.pdf": "/portfolio/static/media/resume.fde9bf65b9645fadedc4.pdf",
     "static/media/Agustina.woff": "/portfolio/static/media/Agustina.eb0c59dda4cc308cba96.woff",
     "static/media/kaggle-data-viz-cert.png": "/portfolio/static/media/kaggle-data-viz-cert.31bd1f2f4b704da28205.png",
     "static/media/kaggle-ml-cert.png": "/portfolio/static/media/kaggle-ml-cert.7df51cccc9c80263df9c.png",
@@ -33,7 +33,7 @@
     "index.html": "/portfolio/index.html",
     "static/media/talksCardBack.svg": "/portfolio/static/media/talksCardBack.73ed1545d58273ba64b0.svg",
     "main.2000a402.css.map": "/portfolio/static/css/main.2000a402.css.map",
-    "main.ac3257f4.js.map": "/portfolio/static/js/main.ac3257f4.js.map",
+    "main.2edabe46.js.map": "/portfolio/static/js/main.2edabe46.js.map",
     "64.bba8fa55.chunk.css.map": "/portfolio/static/css/64.bba8fa55.chunk.css.map",
     "64.5a0a3c5c.chunk.js.map": "/portfolio/static/js/64.5a0a3c5c.chunk.js.map",
     "769.b3cbb36b.chunk.css.map": "/portfolio/static/css/769.b3cbb36b.chunk.css.map",
@@ -41,6 +41,6 @@
   },
   "entrypoints": [
     "static/css/main.2000a402.css",
-    "static/js/main.ac3257f4.js"
+    "static/js/main.2edabe46.js"
   ]
 }

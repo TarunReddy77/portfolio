@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/portfolio/static/css/main.2000a402.css",
-    "main.js": "/portfolio/static/js/main.446c31e9.js",
+    "main.js": "/portfolio/static/js/main.a3f0742c.js",
     "static/css/64.bba8fa55.chunk.css": "/portfolio/static/css/64.bba8fa55.chunk.css",
     "static/js/64.5a0a3c5c.chunk.js": "/portfolio/static/js/64.5a0a3c5c.chunk.js",
     "static/css/769.b3cbb36b.chunk.css": "/portfolio/static/css/769.b3cbb36b.chunk.css",
@@ -14,7 +14,7 @@
     "static/media/meta-intro-to-frontend-coursera-cert.png": "/portfolio/static/media/meta-intro-to-frontend-coursera-cert.9cb370d59a4f7efbfbd4.png",
     "static/media/umich-python-coursera-cert.png": "/portfolio/static/media/umich-python-coursera-cert.15dce9024ddefde6ad8a.png",
     "static/media/Montserrat-Regular.ttf": "/portfolio/static/media/Montserrat-Regular.3cd786652b8a2e9d41f2.ttf",
-    "static/media/northeasternUniversityNonTransparentLogo.jpg": "/portfolio/static/media/northeasternUniversityNonTransparentLogo.c68361894addcb89a4fa.jpg",
+    "static/media/northeasternUniversityNonTransparentLogo.jpg": "/portfolio/static/media/northeasternUniversityNonTransparentLogo.21df0c461bf5c849fe90.jpg",
     "static/media/herheardLogo.png": "/portfolio/static/media/herheardLogo.71eddca816a7a29dc955.png",
     "static/media/northeasternLogo.png": "/portfolio/static/media/northeasternLogo.fb23fcdf5a6dd023bbec.png",
     "static/media/nitLogo.jpg": "/portfolio/static/media/nitLogo.b6b565b959385f6e1101.jpg",
@@ -33,7 +33,7 @@
     "index.html": "/portfolio/index.html",
     "static/media/talksCardBack.svg": "/portfolio/static/media/talksCardBack.73ed1545d58273ba64b0.svg",
     "main.2000a402.css.map": "/portfolio/static/css/main.2000a402.css.map",
-    "main.446c31e9.js.map": "/portfolio/static/js/main.446c31e9.js.map",
+    "main.a3f0742c.js.map": "/portfolio/static/js/main.a3f0742c.js.map",
     "64.bba8fa55.chunk.css.map": "/portfolio/static/css/64.bba8fa55.chunk.css.map",
     "64.5a0a3c5c.chunk.js.map": "/portfolio/static/js/64.5a0a3c5c.chunk.js.map",
     "769.b3cbb36b.chunk.css.map": "/portfolio/static/css/769.b3cbb36b.chunk.css.map",
@@ -41,6 +41,6 @@
   },
   "entrypoints": [
     "static/css/main.2000a402.css",
-    "static/js/main.446c31e9.js"
+    "static/js/main.a3f0742c.js"
   ]
 }

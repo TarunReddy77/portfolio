@@ -23,7 +23,7 @@ const greeting = {
   username: "Tarun Reddy",
   title: "Hey all, I'm Tarun",
   subTitle: emoji(
-    "A driven Full Stack AI Engineer and Software Developer specializing in building intelligent web applications and GenAI solutions using Python, JavaScript, React, Node.js, and the latest AI frameworks. Experienced in developing production-grade LLM-powered chatbots, cloud-native applications, and end-to-end data science projects."
+    "AI/Software Engineer building production LLM security systems: agent orchestration (LangGraph, MCP), retrieval-augmented generation, and the guardrails that keep agentic AI safe. Currently at PointGuard AI. MS in AI from Northeastern (3.96 GPA). Python, PyTorch, FastAPI, LangGraph, MCP, RAG."
   ),
   resumeLink:
     "https://drive.google.com/file/d/1_zKC_Tv_1jWh_FEzV7D8TCGcp7zjQ0mo/view?usp=sharing", // Set to empty to hide the button
@@ -50,7 +50,7 @@ const socialMediaLinks = {
 const skillsSection = {
   title: "What I do",
   subTitle:
-    "GENAI ENGINEER AND FULL STACK DEVELOPER BUILDING INTELLIGENT APPS WITH MODERN AI & CLOUD STACKS",
+    "AI/SOFTWARE ENGINEER BUILDING LLM SECURITY, AGENTIC SYSTEMS, AND PRODUCTION AI INFRASTRUCTURE",
   skills: [
     emoji(
       "⚡ Design and develop end-to-end GenAI applications and intelligent chatbots powered by LLMs, Retrieval-Augmented Generation (RAG), and vector databases"
@@ -75,7 +75,7 @@ const skillsSection = {
     {skillName: "React", fontAwesomeClassname: "fab fa-react"},
     {skillName: "Node.js", fontAwesomeClassname: "fab fa-node"},
     {skillName: "FastAPI", fontAwesomeClassname: "fas fa-bolt"}, // Custom icon
-    {skillName: "LangChain", fontAwesomeClassname: "fas fa-link"}, // Custom icon
+    {skillName: "LangChain", fontAwesomeClassname: "fas fa-link"}, {skillName: "LangGraph", fontAwesomeClassname: "fas fa-project-diagram"}, {skillName: "MCP", fontAwesomeClassname: "fas fa-plug"}, // Custom icon
     {skillName: "OpenAI", fontAwesomeClassname: "fas fa-robot"}, // Custom icon
     {skillName: "Pinecone", fontAwesomeClassname: "fas fa-database"},
     {skillName: "Docker", fontAwesomeClassname: "fab fa-docker"},
@@ -160,7 +160,7 @@ const workExperiences = {
   display: true, //Set it to true to show workExperiences Section
   experience: [
     {
-      role: "Full-Stack AI Engineer Intern",
+      role: "AI / ML Engineer", company: "PointGuard AI", date: "Aug 2025 - Present", desc: "Building endpoint security and governance for the agentic era.", descBullets: ["Building \"Agent Mission Control\": a scanner that sweeps enterprise endpoints to inventory AI agents, tools, and MCP servers, then flags malicious patterns, prompt injection, and data exfiltration.", "Built a four-tier classification pipeline that discovers shadow AI and publishes a continuously-crawled knowledge base of 30,000+ AI tools scored by risk.", "Trained and evaluated detection and guardrail models: 99.7% detection at a 2% false-positive rate against the OWASP LLM Top 10.", "Engineered stateful multi-agent orchestration (LangGraph, MCP servers) deployed as a LiteLLM proxy plugin with zero-downtime cutover.", "Built a high-throughput LLM observability pipeline (OpenTelemetry, ClickHouse) with real-time anomaly alerting."] }, { role: "Full-Stack AI Engineer Intern",
       company: "HerHeard",
       companylogo: require("./assets/images/herheardLogo.png"), // <-- Add your logo image
       date: "Sep 2024 – Dec 2024",

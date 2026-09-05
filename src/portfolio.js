@@ -34,7 +34,7 @@ const greeting = {
 
 const socialMediaLinks = {
   github: "https://github.com/TarunReddy77",
-  linkedin: "https://www.linkedin.com/in/tarun-reddy/",
+  linkedin: "https://www.linkedin.com/in/tarun-r-15558a431/",
   gmail: "tarutornado@gmail.com",
   //gitlab: "https://gitlab.com/saadpasta",
   //facebook: "https://www.facebook.com/saad.pasta7",
@@ -160,7 +160,8 @@ const workExperiences = {
   display: true, //Set it to true to show workExperiences Section
   experience: [
     {
-      role: "AI / ML Engineer", company: "PointGuard AI", date: "Aug 2025 - Present", desc: "Building endpoint security and governance for the agentic era.", descBullets: ["Building \"Agent Mission Control\": a scanner that sweeps enterprise endpoints to inventory AI agents, tools, and MCP servers, then flags malicious patterns, prompt injection, and data exfiltration.", "Built a four-tier classification pipeline that discovers shadow AI and publishes a continuously-crawled knowledge base of 30,000+ AI tools scored by risk.", "Trained and evaluated detection and guardrail models: 99.7% detection at a 2% false-positive rate against the OWASP LLM Top 10.", "Engineered stateful multi-agent orchestration (LangGraph, MCP servers) deployed as a LiteLLM proxy plugin with zero-downtime cutover.", "Built a high-throughput LLM observability pipeline (OpenTelemetry, ClickHouse) with real-time anomaly alerting."] }, { role: "Full-Stack AI Engineer Intern",
+      role: "Software Engineer", company: "PointGuard AI", companylogo: require("./assets/images/pointguardLogo.png"), date: "Aug 2025 - Present", desc: "Building endpoint security and governance for the agentic era.", descBullets: ["Building \"Agent Mission Control\": a scanner that sweeps enterprise endpoints to inventory AI agents, tools, and MCP servers, then flags malicious patterns, prompt injection, and data exfiltration.", "Built a four-tier classification pipeline that discovers shadow AI and publishes a continuously-crawled knowledge base of 30,000+ AI tools scored by risk.", "Trained and evaluated detection and guardrail models: 99.7% detection at a 2% false-positive rate against the OWASP LLM Top 10.", "Engineered stateful multi-agent orchestration (LangGraph, MCP servers) deployed as a LiteLLM proxy plugin with zero-downtime cutover.", "Built a high-throughput LLM observability pipeline (OpenTelemetry, ClickHouse) with real-time anomaly alerting."] 
+    }, { role: "Full-Stack AI Engineer",
       company: "HerHeard",
       companylogo: require("./assets/images/herheardLogo.png"), // <-- Add your logo image
       date: "Sep 2024 – Dec 2024",

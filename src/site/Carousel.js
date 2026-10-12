@@ -93,7 +93,7 @@ export default function Carousel({label, items, renderItem}) {
             <div
               key={i}
               className="carousel-slide"
-              data-pos={Math.abs(off) > 2 ? "hidden" : off}
+              data-pos={Math.max(-3, Math.min(3, off))}
               aria-hidden={!active}
               role="group"
               aria-roledescription="slide"

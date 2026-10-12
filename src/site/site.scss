@@ -586,7 +586,13 @@ a.card:hover,
 }
 
 .carousel {
-  --w: min(560px, 78vw);
+  --w: clamp(300px, 30vw, 540px); // centre card width
+  --g: 18px; // gap between cards
+  --s1: 0.82; // size of the cards next to the centre
+  --s2: 0.66; // size of the outer cards
+  // Centre-to-centre distances so cards sit side by side with a constant gap.
+  --x1: calc(var(--w) * (0.5 + var(--s1) / 2) + var(--g));
+  --x2: calc(var(--w) * (0.5 + var(--s1) + var(--s2) / 2) + var(--g) * 2);
 }
 
 .carousel-stage {
@@ -612,21 +618,8 @@ a.card:hover,
   left: 50%;
   width: var(--w);
   margin-left: calc(var(--w) / -2);
-  transition: transform 0.55s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.4s ease;
-  will-change: transform;
-
-  // Dims side cards with a solid overlay (not opacity), so overlapping
-  // cards never show through each other.
-  &::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    border-radius: 16px;
-    background: var(--bg);
-    opacity: var(--dim, 0);
-    pointer-events: none;
-    transition: opacity 0.4s ease;
-  }
+  transition: transform 0.55s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.45s ease;
+  will-change: transform, opacity;
 
   > * {
     height: 100%;
@@ -634,44 +627,67 @@ a.card:hover,
 
   &[data-pos="0"] {
     z-index: 3;
+    opacity: 1;
     transform: none;
   }
 
+  // Cards sit side by side; they fade out the further they are from the
+  // centre (50% then 25% visible).
   &[data-pos="1"],
   &[data-pos="-1"] {
     z-index: 2;
-    --dim: 0.45;
+    opacity: 0.5;
     cursor: pointer;
   }
 
   &[data-pos="1"] {
-    transform: translateX(calc(var(--w) * 0.4)) scale(0.88);
+    transform: translateX(var(--x1)) scale(var(--s1));
   }
 
   &[data-pos="-1"] {
-    transform: translateX(calc(var(--w) * -0.4)) scale(0.88);
+    transform: translateX(calc(var(--x1) * -1)) scale(var(--s1));
   }
 
   &[data-pos="2"],
   &[data-pos="-2"] {
     z-index: 1;
-    --dim: 0.7;
+    opacity: 0.25;
     cursor: pointer;
   }
 
   &[data-pos="2"] {
-    transform: translateX(calc(var(--w) * 0.62)) scale(0.76);
+    transform: translateX(var(--x2)) scale(var(--s2));
   }
 
   &[data-pos="-2"] {
-    transform: translateX(calc(var(--w) * -0.62)) scale(0.76);
+    transform: translateX(calc(var(--x2) * -1)) scale(var(--s2));
   }
 
-  &[data-pos="hidden"] {
+  // Waiting off-screen on either side, ready to slide in.
+  &[data-pos="3"],
+  &[data-pos="-3"] {
     z-index: 0;
     opacity: 0;
     pointer-events: none;
-    transform: scale(0.7);
+  }
+
+  &[data-pos="3"] {
+    transform: translateX(calc(var(--x2) + var(--w) * 0.7)) scale(var(--s2));
+  }
+
+  &[data-pos="-3"] {
+    transform: translateX(calc((var(--x2) + var(--w) * 0.7) * -1))
+      scale(var(--s2));
+  }
+
+  &[data-pos="1"]:hover,
+  &[data-pos="-1"]:hover {
+    opacity: 0.8;
+  }
+
+  &[data-pos="2"]:hover,
+  &[data-pos="-2"]:hover {
+    opacity: 0.5;
   }
 }
 

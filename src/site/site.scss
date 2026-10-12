@@ -16,6 +16,10 @@
   --brand-github: #111113;
   --brand-medium: #111113;
   --pin: #e5484d;
+  --chip-bg: rgba(245, 184, 46, 0.18);
+  --chip-border: rgba(180, 83, 9, 0.3);
+  --chip-fg: #7a3f08;
+  --chip-hover-bg: rgba(245, 184, 46, 0.34);
   --shadow: 0 1px 2px rgba(17, 17, 19, 0.04), 0 8px 24px rgba(17, 17, 19, 0.05);
   color-scheme: light;
 }
@@ -35,6 +39,10 @@
   --brand-github: #ece9e2;
   --brand-medium: #ece9e2;
   --pin: #ff6b6f;
+  --chip-bg: rgba(245, 184, 46, 0.1);
+  --chip-border: rgba(245, 184, 46, 0.3);
+  --chip-fg: #f5c75a;
+  --chip-hover-bg: rgba(245, 184, 46, 0.22);
   --shadow: 0 1px 2px rgba(0, 0, 0, 0.4), 0 8px 24px rgba(0, 0, 0, 0.35);
   color-scheme: dark;
 }
@@ -93,7 +101,7 @@ body {
     border-radius: 6px;
   }
 
-  button {
+  :where(button) {
     font: inherit;
     color: inherit;
   }
@@ -477,17 +485,21 @@ body {
 }
 
 .chip {
-  padding: 3px 10px;
+  padding: 3px 11px;
   border-radius: 999px;
-  background: var(--chip);
-  border: 1px solid var(--border);
+  background: var(--chip-bg);
+  border: 1px solid var(--chip-border);
   font: 400 12px/1.7 $mono;
-  color: var(--muted);
-  transition: border-color 0.15s ease, color 0.15s ease;
+  color: var(--chip-fg);
+  cursor: default;
+  transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1),
+    background 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
 
   &:hover {
+    transform: translateY(-3px) scale(1.07);
+    background: var(--chip-hover-bg);
     border-color: var(--accent);
-    color: var(--fg);
+    box-shadow: 0 6px 14px rgba(245, 184, 46, 0.28);
   }
 }
 
@@ -810,6 +822,10 @@ a.cert:hover .cert-thumb img {
 
   .cursor {
     animation: none;
+  }
+
+  .chip:hover {
+    transform: none;
   }
 
   .btn,

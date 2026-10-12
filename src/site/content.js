@@ -223,5 +223,7 @@ export const skills = alsoUsed.length
 export const certifications = achievementSection.achievementsCards.map(c => ({
   title: c.title,
   subtitle: c.subtitle,
+  image: c.image,
+  imageAlt: c.imageAlt,
   url: c.footerLink && c.footerLink[0] ? c.footerLink[0].url : null
 }));

@@ -311,6 +311,29 @@ export function Education({number}) {
   );
 }
 
+function CertBody({c}) {
+  return (
+    <>
+      {c.image && (
+        <div className="cert-thumb">
+          <img
+            src={c.image}
+            alt={c.imageAlt || `${c.title} certificate`}
+            loading="lazy"
+          />
+        </div>
+      )}
+      <div className="cert-text">
+        <span>
+          <strong>{c.title}</strong>
+          <small>{c.subtitle}</small>
+        </span>
+        {c.url && <Icon d={icons.arrow} />}
+      </div>
+    </>
+  );
+}
+
 export function Certifications({number}) {
   return (
     <section className="section" id="certifications">
@@ -318,7 +341,7 @@ export function Certifications({number}) {
       <ul className="cert-grid">
         {certifications.map((c, i) => (
           <li key={c.title}>
-            <Reveal delay={(i % 2) * 40}>
+            <Reveal delay={(i % 3) * 40}>
               {c.url ? (
                 <a
                   className="card cert"
@@ -326,18 +349,11 @@ export function Certifications({number}) {
                   target="_blank"
                   rel="noreferrer"
                 >
-                  <span>
-                    <strong>{c.title}</strong>
-                    <small>{c.subtitle}</small>
-                  </span>
-                  <Icon d={icons.arrow} />
+                  <CertBody c={c} />
                 </a>
               ) : (
                 <div className="card cert">
-                  <span>
-                    <strong>{c.title}</strong>
-                    <small>{c.subtitle}</small>
-                  </span>
+                  <CertBody c={c} />
                 </div>
               )}
             </Reveal>

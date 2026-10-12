@@ -517,6 +517,9 @@ body {
   border-radius: 999px;
   background: var(--chip-bg);
   border: 1px solid var(--chip-border);
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
   font: 400 12px/1.7 $mono;
   color: var(--chip-fg);
   cursor: default;
@@ -529,6 +532,16 @@ body {
     border-color: var(--accent);
     box-shadow: 0 6px 14px rgba(245, 184, 46, 0.28);
   }
+}
+
+.chip-icon {
+  flex: none;
+  display: block;
+  object-fit: contain;
+}
+
+:root[data-theme="dark"] .chip-icon-invert {
+  filter: invert(1);
 }
 
 // ---------- cards + carousel ----------

@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from "react";
 import Reveal from "./Reveal";
 import Carousel from "./Carousel";
+import {iconFor} from "./skillIcons";
 import {blogSection, educationInfo} from "../portfolio";
 import {
   photo,
@@ -108,13 +109,30 @@ const MetaLink = ({href, external, icon, children}) => (
   </li>
 );
 
+const Chip = ({label}) => {
+  const icon = iconFor(label);
+  return (
+    <li className="chip">
+      {icon && (
+        <img
+          className={icon.invert ? "chip-icon chip-icon-invert" : "chip-icon"}
+          src={icon.src}
+          alt=""
+          width="14"
+          height="14"
+          loading="lazy"
+        />
+      )}
+      {label}
+    </li>
+  );
+};
+
 const Chips = ({items}) =>
   items && items.length ? (
     <ul className="chips">
       {items.map(c => (
-        <li key={c} className="chip">
-          {c}
-        </li>
+        <Chip key={c} label={c} />
       ))}
     </ul>
   ) : null;

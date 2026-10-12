@@ -70,6 +70,9 @@ body {
 }
 
 .site {
+  // 100vw includes the scrollbar; clip (unlike hidden) keeps sticky working.
+  overflow-x: clip;
+
   *,
   *::before,
   *::after {
@@ -576,41 +579,107 @@ body {
   transition: transform 0.2s ease, border-color 0.2s ease;
 }
 
-a.card:hover {
+a.card:hover,
+.carousel-slide[data-pos="0"] .project-card:hover {
   transform: translateY(-3px);
   border-color: var(--accent);
 }
 
-.carousel-track {
-  display: flex;
-  gap: 20px;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  scrollbar-width: none;
-  padding: 6px 2px 18px;
-  margin: -6px -2px 0;
+.carousel {
+  --w: min(560px, 78vw);
+}
 
-  &::-webkit-scrollbar {
-    display: none;
-  }
+.carousel-stage {
+  position: relative;
+  // Full-bleed: break out of the page column so side cards have room.
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  height: 420px;
+  overflow: hidden;
+  padding: 12px 0;
+  box-sizing: content-box;
+  touch-action: pan-y;
+  overscroll-behavior-x: contain;
+  user-select: none;
+  -webkit-user-select: none;
+  outline-offset: 4px;
 }
 
 .carousel-slide {
-  flex: 0 0 calc((100% - 20px) / 2 - 36px);
-  min-width: 0;
-  scroll-snap-align: start;
-  display: flex;
+  position: absolute;
+  top: 12px;
+  bottom: 12px;
+  left: 50%;
+  width: var(--w);
+  margin-left: calc(var(--w) / -2);
+  transition: transform 0.55s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.4s ease;
+  will-change: transform;
+
+  // Dims side cards with a solid overlay (not opacity), so overlapping
+  // cards never show through each other.
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 16px;
+    background: var(--bg);
+    opacity: var(--dim, 0);
+    pointer-events: none;
+    transition: opacity 0.4s ease;
+  }
 
   > * {
-    width: 100%;
+    height: 100%;
+  }
+
+  &[data-pos="0"] {
+    z-index: 3;
+    transform: none;
+  }
+
+  &[data-pos="1"],
+  &[data-pos="-1"] {
+    z-index: 2;
+    --dim: 0.45;
+    cursor: pointer;
+  }
+
+  &[data-pos="1"] {
+    transform: translateX(calc(var(--w) * 0.4)) scale(0.88);
+  }
+
+  &[data-pos="-1"] {
+    transform: translateX(calc(var(--w) * -0.4)) scale(0.88);
+  }
+
+  &[data-pos="2"],
+  &[data-pos="-2"] {
+    z-index: 1;
+    --dim: 0.7;
+    cursor: pointer;
+  }
+
+  &[data-pos="2"] {
+    transform: translateX(calc(var(--w) * 0.62)) scale(0.76);
+  }
+
+  &[data-pos="-2"] {
+    transform: translateX(calc(var(--w) * -0.62)) scale(0.76);
+  }
+
+  &[data-pos="hidden"] {
+    z-index: 0;
+    opacity: 0;
+    pointer-events: none;
+    transform: scale(0.7);
   }
 }
 
 .project-card {
   display: flex;
   flex-direction: column;
-  padding: 24px;
-  min-height: 280px;
+  height: 100%;
+  padding: 28px;
 
   h3 {
     margin-top: 10px;
@@ -638,6 +707,7 @@ a.card:hover {
     -webkit-line-clamp: 6;
     -webkit-box-orient: vertical;
     overflow: hidden;
+    flex-shrink: 0;
   }
 
   .card-foot {
@@ -671,16 +741,11 @@ a.card:hover {
   }
 }
 
-.carousel-controls {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-top: 8px;
-}
-
 .carousel-dots {
   display: flex;
+  justify-content: center;
   gap: 8px;
+  margin-top: 12px;
 }
 
 .dot {
@@ -691,17 +756,16 @@ a.card:hover {
   border-radius: 999px;
   background: var(--border);
   cursor: pointer;
-  transition: width 0.2s ease, background 0.2s ease;
+  transition: width 0.25s ease, background 0.25s ease;
+
+  &:hover {
+    background: var(--muted);
+  }
 
   &.is-active {
-    width: 24px;
+    width: 26px;
     background: var(--accent);
   }
-}
-
-.carousel-arrows {
-  display: flex;
-  gap: 8px;
 }
 
 // ---------- skills ----------
@@ -954,12 +1018,16 @@ a.cert:hover .cert-thumb img {
 
 // ---------- responsive ----------
 @media (max-width: 860px) {
-  .carousel-slide {
-    flex-basis: calc(100% - 36px);
-  }
-
   .skill-grid {
     grid-template-columns: 1fr;
+  }
+
+  .carousel-stage {
+    height: 540px;
+  }
+
+  .project-card .card-desc {
+    -webkit-line-clamp: 4;
   }
 
   .cert-grid {

@@ -269,10 +269,15 @@ export function Experience({number}) {
   );
 }
 
-function ProjectCard({p}) {
+function ProjectCard({p, active}) {
   const Tag = p.url ? "a" : "div";
   const linkProps = p.url
-    ? {href: p.url, target: "_blank", rel: "noreferrer"}
+    ? {
+        href: p.url,
+        target: "_blank",
+        rel: "noreferrer",
+        tabIndex: active ? 0 : -1
+      }
     : {};
   return (
     <Tag className="card project-card" {...linkProps}>
@@ -343,11 +348,11 @@ export function Projects({number}) {
     <section className="section" id="projects">
       <SectionTitle number={number} title="Projects" />
       <Reveal>
-        <Carousel label="Projects">
-          {items.map(p => (
-            <ProjectCard key={p.title} p={p} />
-          ))}
-        </Carousel>
+        <Carousel
+          label="Projects"
+          items={items}
+          renderItem={(p, active) => <ProjectCard p={p} active={active} />}
+        />
       </Reveal>
     </section>
   );

@@ -63,6 +63,51 @@ const icons = {
   fork: "M7 4v6a3 3 0 003 3h4a3 3 0 003-3V4M12 13v7"
 };
 
+// Multi-colour Gmail "M" mark (keeps its own colours in both themes).
+const GmailIcon = ({size = 22}) => (
+  <svg
+    className="brand-icon"
+    viewBox="0 0 48 48"
+    width={size}
+    height={size}
+    aria-hidden="true"
+  >
+    <path
+      fill="#4caf50"
+      d="M45 16.2l-5 2.75-5 4.75L35 40h7c1.657 0 3-1.343 3-3V16.2z"
+    />
+    <path
+      fill="#1e88e5"
+      d="M3 16.2l3.614 1.71L13 23.7V40H6c-1.657 0-3-1.343-3-3V16.2z"
+    />
+    <path
+      fill="#e53935"
+      d="M35 11.2L24 19.45 13 11.2l-1 5.63v.008l1 6.862 11 8.25 11-8.25 1-6.862-1-5.638z"
+    />
+    <path
+      fill="#c62828"
+      d="M3 12.298V16.2l10 7.5V11.2L9.876 8.859A4.3 4.3 0 007.298 8C4.924 8 3 9.924 3 12.298z"
+    />
+    <path
+      fill="#fbc02d"
+      d="M45 12.298V16.2l-10 7.5V11.2l3.124-2.341A4.3 4.3 0 0140.702 8C43.076 8 45 9.924 45 12.298z"
+    />
+  </svg>
+);
+
+const MetaLink = ({href, external, icon, children}) => (
+  <li>
+    <a
+      className="meta-link"
+      href={href}
+      {...(external ? {target: "_blank", rel: "noreferrer"} : {})}
+    >
+      {icon}
+      <span>{children}</span>
+    </a>
+  </li>
+);
+
 const Chips = ({items}) =>
   items && items.length ? (
     <ul className="chips">
@@ -114,33 +159,37 @@ export function Hero() {
           </a>
         </div>
         <ul className="meta">
-          <li>
-            <Icon d={icons.mail} className="icon-mail" />
-            <a href={`mailto:${profile.links.email}`}>{profile.links.email}</a>
-          </li>
-          <li>
-            <Icon d={icons.phone} className="icon-phone" />
-            <a href={`tel:${profile.links.phone}`}>{profile.links.phone}</a>
-          </li>
-          <li>
-            <BrandIcon name="linkedin" />
-            <a href={profile.links.linkedin} target="_blank" rel="noreferrer">
-              LinkedIn
-            </a>
-          </li>
-          <li>
-            <BrandIcon name="github" />
-            <a href={profile.links.github} target="_blank" rel="noreferrer">
-              GitHub
-            </a>
-          </li>
+          <MetaLink href={`mailto:${profile.links.email}`} icon={<GmailIcon />}>
+            {profile.links.email}
+          </MetaLink>
+          <MetaLink
+            href={`tel:${profile.links.phone}`}
+            icon={<Icon d={icons.phone} size={22} className="icon-phone" />}
+          >
+            {profile.links.phone}
+          </MetaLink>
+          <MetaLink
+            external
+            href={profile.links.linkedin}
+            icon={<BrandIcon name="linkedin" size={22} />}
+          >
+            LinkedIn
+          </MetaLink>
+          <MetaLink
+            external
+            href={profile.links.github}
+            icon={<BrandIcon name="github" size={22} />}
+          >
+            GitHub
+          </MetaLink>
           {profile.links.medium && (
-            <li>
-              <BrandIcon name="medium" />
-              <a href={profile.links.medium} target="_blank" rel="noreferrer">
-                Medium
-              </a>
-            </li>
+            <MetaLink
+              external
+              href={profile.links.medium}
+              icon={<BrandIcon name="medium" size={22} />}
+            >
+              Medium
+            </MetaLink>
           )}
         </ul>
       </Reveal>

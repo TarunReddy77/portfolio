@@ -76,7 +76,7 @@ body {
     box-sizing: border-box;
   }
 
-  a {
+  :where(a) {
     color: inherit;
     text-decoration: none;
   }
@@ -277,9 +277,15 @@ body {
 }
 
 .btn-primary {
-  background: var(--accent-fill);
+  background: #0c0d11;
   border-color: var(--accent-fill);
-  color: var(--on-accent);
+  color: #f4f2ec;
+  font-weight: 400;
+
+  &:hover {
+    background: rgba(245, 184, 46, 0.14);
+    box-shadow: 0 6px 18px rgba(245, 184, 46, 0.25);
+  }
 }
 
 .btn-ghost {
@@ -293,22 +299,38 @@ body {
 .meta {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px 24px;
-  margin-top: 32px;
-  font-size: 14px;
+  gap: 10px 12px;
+  margin: 28px 0 0 -14px;
+  font-size: 1.0625rem;
   color: var(--muted);
+}
 
-  li {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
+.meta-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 9px 16px;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  transition: transform 0.28s cubic-bezier(0.34, 1.56, 0.64, 1), color 0.2s ease,
+    background 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+
+  .brand-icon,
+  svg {
+    flex: none;
+    transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
   }
 
-  a {
-    transition: color 0.15s ease;
+  &:hover,
+  &:focus-visible {
+    transform: translateY(-4px) scale(1.05);
+    color: var(--fg);
+    background: var(--chip-bg);
+    border-color: var(--accent);
+    box-shadow: 0 8px 20px rgba(245, 184, 46, 0.25);
 
-    &:hover {
-      color: var(--accent);
+    svg {
+      transform: scale(1.25) rotate(-8deg);
     }
   }
 }
@@ -873,6 +895,9 @@ a.cert:hover .cert-thumb img {
   }
 
   .chip:hover,
+  .meta-link:hover,
+  .meta-link:focus-visible,
+  .meta-link:hover svg,
   .to-top:hover,
   .to-top:focus-visible {
     transform: none;

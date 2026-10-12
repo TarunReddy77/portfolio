@@ -31,9 +31,10 @@
   color-scheme: dark;
 }
 
+$serif: "Instrument Serif", Georgia, "Times New Roman", serif;
 $mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Consolas,
   monospace;
-$sans: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+$sans: "Outfit", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
 
 html {
   scroll-behavior: smooth;
@@ -60,6 +61,12 @@ body {
   a {
     color: inherit;
     text-decoration: none;
+  }
+
+  // Instrument Serif only ships a regular weight, so headings stay at 400.
+  :where(h1, h2, h3) {
+    font-family: $serif;
+    font-weight: 400;
   }
 
   // :where() keeps the reset at zero specificity so component rules win.
@@ -180,10 +187,10 @@ body {
   }
 
   h1 {
-    font-size: clamp(2.4rem, 6.4vw, 4.4rem);
-    font-weight: 500;
+    font-size: clamp(2.9rem, 7.6vw, 5.4rem);
+    font-weight: 400;
     line-height: 1.04;
-    letter-spacing: -0.035em;
+    letter-spacing: -0.01em;
   }
 
   .cursor {
@@ -306,9 +313,9 @@ body {
   margin-bottom: 40px;
 
   h2 {
-    font-size: clamp(1.5rem, 3vw, 1.9rem);
-    font-weight: 500;
-    letter-spacing: -0.02em;
+    font-size: clamp(1.9rem, 3.6vw, 2.4rem);
+    font-weight: 400;
+    letter-spacing: 0;
   }
 }
 
@@ -363,9 +370,9 @@ body {
   gap: 14px;
 
   h3 {
-    font-size: 1.25rem;
-    font-weight: 500;
-    letter-spacing: -0.015em;
+    font-size: 1.6rem;
+    font-weight: 400;
+    letter-spacing: 0;
     line-height: 1.3;
   }
 }
@@ -503,9 +510,9 @@ a.card:hover {
 
   h3 {
     margin-top: 10px;
-    font-size: 1.2rem;
-    font-weight: 500;
-    letter-spacing: -0.015em;
+    font-size: 1.5rem;
+    font-weight: 400;
+    letter-spacing: 0;
   }
 
   .card-top {

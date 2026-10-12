@@ -5,7 +5,7 @@ import React, {useEffect, useRef, useState} from "react";
 // Move with the dots, a click on a side card, swipe/drag, or arrow keys.
 const SWIPE_PX = 40;
 const WHEEL_PX = 50; // sideways trackpad travel needed to advance one card
-const WHEEL_COOLDOWN_MS = 450;
+const WHEEL_GESTURE_GAP_MS = 180; // silence that ends a swipe gesture
 
 export default function Carousel({label, items, renderItem}) {
   const n = items.length;
@@ -15,25 +15,51 @@ export default function Carousel({label, items, renderItem}) {
 
   const go = i => setIndex(((i % n) + n) % n);
 
+  // Ends a mouse/touch swipe wherever the pointer is released, even outside
+  // the carousel or the window. (Not pointer capture: that would retarget the
+  // click and break links inside the cards.)
+  useEffect(() => {
+    const onUp = e => {
+      const {startX} = drag.current;
+      if (startX === null) return;
+      const dx = e.clientX - startX;
+      drag.current.startX = null;
+      if (Math.abs(dx) > SWIPE_PX) {
+        drag.current.moved = true;
+        const dir = dx < 0 ? 1 : -1;
+        setIndex(i => (((i + dir) % n) + n) % n);
+      }
+    };
+    window.addEventListener("pointerup", onUp);
+    return () => window.removeEventListener("pointerup", onUp);
+  }, [n]);
+
   // Two-finger sideways swipe on a trackpad (or a horizontal mouse wheel).
   // Needs a non-passive native listener so the browser's own horizontal
-  // scroll / back-swipe doesn't also fire.
+  // scroll / back-swipe doesn't also fire. One continuous swipe, including the
+  // momentum after the fingers lift, counts as a single gesture: it moves at
+  // most one card, and a new gesture starts after a short pause in events.
   useEffect(() => {
     const el = stageRef.current;
     if (!el) return undefined;
     let travelled = 0;
-    let lockedUntil = 0;
+    let lastEvent = 0;
+    let spent = false; // this gesture has already moved a card
     const onWheel = e => {
       if (Math.abs(e.deltaX) <= Math.abs(e.deltaY)) return; // vertical: let the page scroll
       e.preventDefault();
       const now = Date.now();
-      if (now < lockedUntil) return;
+      if (now - lastEvent > WHEEL_GESTURE_GAP_MS) {
+        travelled = 0;
+        spent = false;
+      }
+      lastEvent = now;
+      if (spent) return;
       travelled += e.deltaX;
       if (Math.abs(travelled) >= WHEEL_PX) {
         const dir = travelled > 0 ? 1 : -1;
         setIndex(i => (((i + dir) % n) + n) % n);
-        travelled = 0;
-        lockedUntil = now + WHEEL_COOLDOWN_MS;
+        spent = true;
       }
     };
     el.addEventListener("wheel", onWheel, {passive: false});
@@ -49,16 +75,6 @@ export default function Carousel({label, items, renderItem}) {
 
   const onPointerDown = e => {
     drag.current = {startX: e.clientX, moved: false};
-  };
-  const onPointerUp = e => {
-    const {startX} = drag.current;
-    if (startX === null) return;
-    const dx = e.clientX - startX;
-    if (Math.abs(dx) > SWIPE_PX) {
-      drag.current.moved = true;
-      go(index + (dx < 0 ? 1 : -1));
-    }
-    drag.current.startX = null;
   };
   const onKeyDown = e => {
     if (e.key === "ArrowRight") {
@@ -83,7 +99,6 @@ export default function Carousel({label, items, renderItem}) {
         // Stops the browser's native link-drag from cancelling a mouse swipe.
         onDragStart={e => e.preventDefault()}
         onPointerDown={onPointerDown}
-        onPointerUp={onPointerUp}
         onPointerCancel={() => (drag.current.startX = null)}
       >
         {items.map((item, i) => {

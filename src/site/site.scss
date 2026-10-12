@@ -15,7 +15,8 @@
   --brand-linkedin: #0a66c2;
   --brand-github: #111113;
   --brand-medium: #111113;
-  --pin: #e5484d;
+  --icon-mail: #e5484d;
+  --icon-phone: #1f9d55;
   --chip-bg: rgba(245, 184, 46, 0.18);
   --chip-border: rgba(180, 83, 9, 0.3);
   --chip-fg: #7a3f08;
@@ -38,7 +39,8 @@
   --brand-linkedin: #4a9ef0;
   --brand-github: #ece9e2;
   --brand-medium: #ece9e2;
-  --pin: #ff6b6f;
+  --icon-mail: #ff6b6f;
+  --icon-phone: #4ade80;
   --chip-bg: rgba(245, 184, 46, 0.1);
   --chip-border: rgba(245, 184, 46, 0.3);
   --chip-fg: #f5c75a;
@@ -328,8 +330,12 @@ body {
   color: var(--brand-medium);
 }
 
-.icon-pin {
-  color: var(--pin);
+.icon-mail {
+  color: var(--icon-mail);
+}
+
+.icon-phone {
+  color: var(--icon-phone);
 }
 
 // ---------- sections ----------

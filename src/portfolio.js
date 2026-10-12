@@ -35,7 +35,7 @@ const greeting = {
 const socialMediaLinks = {
   github: "https://github.com/TarunReddy77",
   linkedin: "https://www.linkedin.com/in/tarun-r-15558a431/",
-  gmail: "tarutornado@gmail.com",
+  gmail: "tarunthandu@gmail.com",
   //gitlab: "https://gitlab.com/saadpasta",
   //facebook: "https://www.facebook.com/saad.pasta7",
   medium: "https://medium.com/@tarutornado",
@@ -466,7 +466,7 @@ const contactInfo = {
   subtitle:
     "Discuss a project or just want to say hi? My Inbox is open for all.",
   number: "+1-8576934743",
-  email_address: "tarutornado@gmail.com"
+  email_address: "tarunthandu@gmail.com"
 };
 
 // Twitter Section

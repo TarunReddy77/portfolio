@@ -17,7 +17,6 @@ export const profile = {
   name: "Tarun Reddy Thandu",
   initials: "TT",
   tagline: "hello world — I'm",
-  location: "Fremont, California, United States",
   summary: [
     "MS in Artificial Intelligence (3.96 GPA) with hands-on experience building scalable distributed systems and ML-powered services on AWS for Fortune 500 clients. Skilled in cloud-native microservices (EKS, Lambda, Bedrock), CI/CD, and GenAI integration. Strong focus on operational excellence, code quality, and customer-obsessed product delivery.",
     greeting.subTitle
@@ -26,7 +25,8 @@ export const profile = {
     github: socialMediaLinks.github,
     linkedin: socialMediaLinks.linkedin,
     medium: socialMediaLinks.medium,
-    email: contactInfo.email_address
+    email: contactInfo.email_address,
+    phone: contactInfo.number
   }
 };
 

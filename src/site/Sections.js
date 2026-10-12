@@ -54,7 +54,9 @@ const BrandIcon = ({name, size = 18}) => (
 );
 
 const icons = {
-  pin: "M12 21s-7-6.2-7-11a7 7 0 1114 0c0 4.8-7 11-7 11zM12 12a2 2 0 100-4 2 2 0 000 4z",
+  mail: "M4 6h16v12H4zM4 7l8 6 8-6",
+  phone:
+    "M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z",
   arrow: "M7 17L17 7M8 7h9v9",
   download: "M12 4v11M7 11l5 5 5-5M5 20h14",
   star: "M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z",
@@ -107,19 +109,18 @@ export function Hero() {
           </p>
         ))}
         <div className="hero-actions">
-          <a className="btn btn-primary" href="#experience">
-            View my work <Icon d={icons.arrow} />
-          </a>
-          <a className="btn btn-ghost" href={`mailto:${profile.links.email}`}>
-            Get in touch
-          </a>
-          <a className="btn btn-ghost" href={resumeUrl} download="Resume.pdf">
+          <a className="btn btn-primary" href={resumeUrl} download="Resume.pdf">
             Resume <Icon d={icons.download} />
           </a>
         </div>
         <ul className="meta">
           <li>
-            <Icon d={icons.pin} className="icon-pin" /> {profile.location}
+            <Icon d={icons.mail} className="icon-mail" />
+            <a href={`mailto:${profile.links.email}`}>{profile.links.email}</a>
+          </li>
+          <li>
+            <Icon d={icons.phone} className="icon-phone" />
+            <a href={`tel:${profile.links.phone}`}>{profile.links.phone}</a>
           </li>
           <li>
             <BrandIcon name="linkedin" />

@@ -9,8 +9,7 @@ import {
   Skills,
   Education,
   Certifications,
-  Writing,
-  Contact
+  Writing
 } from "./Sections";
 import "./site.scss";
 
@@ -25,8 +24,7 @@ const sections = [
     label: "Writing",
     Component: Writing,
     enabled: blogSection.display
-  },
-  {id: "contact", label: "Contact", Component: Contact}
+  }
 ].filter(s => s.enabled !== false);
 
 function ThemeToggle() {
@@ -83,7 +81,7 @@ export default function Site() {
   }, [isDark]);
 
   return (
-    <div className="site">
+    <div className="site" id="top">
       <header className="site-header">
         <div className="container header-row">
           <a href="#top" className="brand">
@@ -109,12 +107,25 @@ export default function Site() {
       </main>
 
       <footer className="site-footer">
-        <div className="container">
-          <span>
-            © {new Date().getFullYear()} {profile.name}
+        <a href="#top" className="to-top" aria-label="Go to top">
+          <span className="to-top-label" aria-hidden="true">
+            Go to top
           </span>
-          <a href="#top">Back to top ↑</a>
-        </div>
+          <svg
+            className="to-top-arrow"
+            viewBox="0 0 24 24"
+            width="20"
+            height="20"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            aria-hidden="true"
+          >
+            <path d="M12 19V5M5 12l7-7 7 7" />
+          </svg>
+        </a>
       </footer>
     </div>
   );

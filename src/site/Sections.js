@@ -55,7 +55,6 @@ const BrandIcon = ({name, size = 18}) => (
 
 const icons = {
   pin: "M12 21s-7-6.2-7-11a7 7 0 1114 0c0 4.8-7 11-7 11zM12 12a2 2 0 100-4 2 2 0 000 4z",
-  mail: "M4 6h16v12H4zM4 7l8 6 8-6",
   arrow: "M7 17L17 7M8 7h9v9",
   download: "M12 4v11M7 11l5 5 5-5M5 20h14",
   star: "M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z",
@@ -82,7 +81,7 @@ export const SectionTitle = ({number, title}) => (
 
 export function Hero() {
   return (
-    <section className="hero" id="top">
+    <section className="hero">
       <Reveal>
         <p className="eyebrow">
           <span className="prompt">&gt;_</span> {profile.tagline}
@@ -111,7 +110,7 @@ export function Hero() {
           <a className="btn btn-primary" href="#experience">
             View my work <Icon d={icons.arrow} />
           </a>
-          <a className="btn btn-ghost" href="#contact">
+          <a className="btn btn-ghost" href={`mailto:${profile.links.email}`}>
             Get in touch
           </a>
           <a className="btn btn-ghost" href={resumeUrl} download="Resume.pdf">
@@ -452,50 +451,6 @@ export function Writing({number}) {
           </li>
         ))}
       </ul>
-    </section>
-  );
-}
-
-export function Contact({number}) {
-  const {email, phone, github, linkedin, medium} = profile.links;
-  return (
-    <section className="section contact" id="contact">
-      <SectionTitle number={number} title="Contact" />
-      <Reveal>
-        <p className="lead">
-          Discuss a project, a role, or just want to say hi? My inbox is open.
-        </p>
-        <div className="hero-actions">
-          <a className="btn btn-primary" href={`mailto:${email}`}>
-            <Icon d={icons.mail} /> {email}
-          </a>
-          <a className="btn btn-ghost" href={`tel:${phone}`}>
-            {phone}
-          </a>
-        </div>
-        <ul className="meta">
-          <li>
-            <BrandIcon name="github" />
-            <a href={github} target="_blank" rel="noreferrer">
-              GitHub
-            </a>
-          </li>
-          <li>
-            <BrandIcon name="linkedin" />
-            <a href={linkedin} target="_blank" rel="noreferrer">
-              LinkedIn
-            </a>
-          </li>
-          {medium && (
-            <li>
-              <BrandIcon name="medium" />
-              <a href={medium} target="_blank" rel="noreferrer">
-                Medium
-              </a>
-            </li>
-          )}
-        </ul>
-      </Reveal>
     </section>
   );
 }

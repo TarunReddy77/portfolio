@@ -767,27 +767,59 @@ a.cert:hover .cert-thumb img {
   color: var(--muted);
 }
 
-// ---------- contact / footer ----------
-.contact .lead {
-  max-width: 560px;
-  color: var(--muted);
-  font-size: 1.15rem;
+// ---------- footer ----------
+.site-footer {
+  display: flex;
+  justify-content: center;
+  padding: 32px 0 56px;
+  border-top: 1px solid var(--border);
 }
 
-.site-footer {
-  border-top: 1px solid var(--border);
-  padding: 28px 0 40px;
-  font: 400 13px $mono;
+.to-top {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  background: var(--card);
   color: var(--muted);
+  box-shadow: var(--shadow);
+  transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1), color 0.2s ease,
+    border-color 0.2s ease, background 0.2s ease;
 
-  .container {
-    display: flex;
-    justify-content: space-between;
-    gap: 16px;
+  .to-top-label {
+    position: absolute;
+    bottom: calc(100% + 10px);
+    left: 50%;
+    padding: 4px 10px;
+    border-radius: 999px;
+    background: var(--fg);
+    color: var(--bg);
+    font: 400 12px $mono;
+    white-space: nowrap;
+    opacity: 0;
+    transform: translate(-50%, 6px);
+    pointer-events: none;
+    transition: opacity 0.2s ease, transform 0.25s ease;
   }
 
-  a:hover {
-    color: var(--accent);
+  &:hover,
+  &:focus-visible {
+    transform: translateY(-4px);
+    color: var(--on-accent);
+    background: var(--accent-fill);
+    border-color: var(--accent-fill);
+
+    .to-top-label {
+      opacity: 1;
+      transform: translate(-50%, 0);
+    }
+
+    .to-top-arrow {
+      animation: nudge-up 0.9s ease-in-out infinite;
+    }
   }
 }
 
@@ -800,6 +832,16 @@ a.cert:hover .cert-thumb img {
   &.is-visible {
     opacity: 1;
     transform: none;
+  }
+}
+
+@keyframes nudge-up {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-4px);
   }
 }
 
@@ -824,8 +866,15 @@ a.cert:hover .cert-thumb img {
     animation: none;
   }
 
-  .chip:hover {
+  .chip:hover,
+  .to-top:hover,
+  .to-top:focus-visible {
     transform: none;
+  }
+
+  .to-top:hover .to-top-arrow,
+  .to-top:focus-visible .to-top-arrow {
+    animation: none;
   }
 
   .btn,

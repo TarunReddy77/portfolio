@@ -26,8 +26,7 @@ export const profile = {
     github: socialMediaLinks.github,
     linkedin: socialMediaLinks.linkedin,
     medium: socialMediaLinks.medium,
-    email: contactInfo.email_address,
-    phone: contactInfo.number
+    email: contactInfo.email_address
   }
 };
 

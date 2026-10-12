@@ -118,8 +118,8 @@ const Chip = ({label}) => {
           className={icon.invert ? "chip-icon chip-icon-invert" : "chip-icon"}
           src={icon.src}
           alt=""
-          width="14"
-          height="14"
+          width="16"
+          height="16"
           loading="lazy"
         />
       )}

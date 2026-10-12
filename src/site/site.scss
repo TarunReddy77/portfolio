@@ -538,10 +538,32 @@ body {
   flex: none;
   display: block;
   object-fit: contain;
+  // Calm at rest; full colour when the chip is hovered.
+  // Darkened so pale brand colours (yellow, cyan) stay legible on light.
+  filter: grayscale(1) brightness(0.6) contrast(1.25) opacity(0.9);
+  transition: filter 0.2s ease;
 }
 
-:root[data-theme="dark"] .chip-icon-invert {
-  filter: invert(1);
+.chip:hover .chip-icon {
+  filter: none;
+}
+
+:root[data-theme="dark"] {
+  .chip-icon {
+    filter: grayscale(1) brightness(1.7) opacity(0.85);
+  }
+
+  .chip-icon-invert {
+    filter: invert(1) grayscale(1) opacity(0.85);
+  }
+
+  .chip:hover .chip-icon {
+    filter: none;
+  }
+
+  .chip:hover .chip-icon-invert {
+    filter: invert(1);
+  }
 }
 
 // ---------- cards + carousel ----------

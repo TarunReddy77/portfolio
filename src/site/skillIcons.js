@@ -1,6 +1,7 @@
-// Prototype: maps a skill/tech label to a logo in src/assets/skill-icons.
-// Logos come from Simple Icons (CC0) and Devicon (MIT); they remain the
-// property of their respective owners.
+// Maps a skill/tech label to an icon in src/assets/skill-icons.
+// Brand logos come from Simple Icons (CC0) and Devicon (MIT) and remain the
+// property of their owners. Files prefixed g- are generic Lucide icons (ISC)
+// used where no official logo exists.
 const files = require.context("../assets/skill-icons", false, /\.svg$/);
 
 const byLabel = {
@@ -34,11 +35,45 @@ const byLabel = {
   MongoDB: "mongodb",
   DynamoDB: "dynamodb",
   OpenTelemetry: "opentelemetry",
-  Git: "git"
+  Git: "git",
+  // AWS-owned products without a logo of their own
+  "AWS Bedrock": "aws",
+  "Amazon Bedrock": "aws",
+  SageMaker: "aws",
+  "Bedrock AgentCore": "aws",
+  // Managed versions of well-known open-source tech
+  ElastiCache: "redis",
+  MSK: "apachekafka",
+  "Amazon MSK": "apachekafka",
+  FAISS: "meta",
+  // No official logo: closest generic icon
+  SQL: "g-database",
+  "SQL/NoSQL": "g-database",
+  Aurora: "g-database",
+  Neptune: "g-waypoints",
+  OpenAI: "g-sparkles",
+  Pinecone: "g-database-zap",
+  "Strands Agents": "g-bot",
+  "Strands Agents SDK": "g-bot",
+  "A2A Protocol": "g-messages-square",
+  RAG: "g-library",
+  "Fine-tuning": "g-sliders-horizontal",
+  RLHF: "g-thumbs-up",
+  REST: "g-webhook",
+  Microservices: "g-boxes",
+  "Event-Driven Architecture": "g-zap",
+  ETL: "g-workflow",
+  "Agile/Scrum": "g-kanban",
+  "On-call Operations": "g-bell-ring",
+  "CI/CD": "g-infinity"
 };
 
 // Brand colour is black, so these get inverted in dark mode.
-const darkBrand = new Set(["modelcontextprotocol", "opentelemetry"]);
+const darkBrand = new Set([
+  "modelcontextprotocol",
+  "opentelemetry",
+  "apachekafka"
+]);
 
 export function iconFor(label) {
   // "AWS (EKS, S3, ...)" style labels use the AWS logo.

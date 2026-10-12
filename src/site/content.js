@@ -18,7 +18,6 @@ export const profile = {
   initials: "TT",
   tagline: "hello world — I'm",
   location: "Fremont, California, United States",
-  website: {label: "tarunreddy77.github.io/portfolio", url: "/portfolio/"},
   summary: [
     "MS in Artificial Intelligence (3.96 GPA) with hands-on experience building scalable distributed systems and ML-powered services on AWS for Fortune 500 clients. Skilled in cloud-native microservices (EKS, Lambda, Bedrock), CI/CD, and GenAI integration. Strong focus on operational excellence, code quality, and customer-obsessed product delivery.",
     greeting.subTitle

@@ -280,10 +280,21 @@ body {
 }
 
 .btn-primary {
+  background: #f7d77e; // pale amber in light mode
+  border-color: #f7d77e;
+  color: #0c0d11;
+  font-weight: 400;
+
+  &:hover {
+    background: #f2cb64;
+    box-shadow: 0 6px 18px rgba(242, 203, 100, 0.45);
+  }
+}
+
+:root[data-theme="dark"] .btn-primary {
   background: #0c0d11;
   border-color: var(--accent-fill);
   color: #f4f2ec;
-  font-weight: 400;
 
   &:hover {
     background: rgba(245, 184, 46, 0.14);

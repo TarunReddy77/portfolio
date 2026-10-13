@@ -36,28 +36,38 @@ export default function Carousel({label, items, renderItem}) {
 
   // Two-finger sideways swipe on a trackpad (or a horizontal mouse wheel).
   // Needs a non-passive native listener so the browser's own horizontal
-  // scroll / back-swipe doesn't also fire. One continuous swipe, including the
-  // momentum after the fingers lift, counts as a single gesture: it moves at
-  // most one card, and a new gesture starts after a short pause in events.
+  // scroll / back-swipe doesn't also fire.
+  //
+  // A swipe is followed by momentum events that only get weaker. A gesture
+  // moves at most one card; the next one begins when events pause, reverse
+  // direction, or get stronger again (a new swipe landing on the old tail).
   useEffect(() => {
     const el = stageRef.current;
     if (!el) return undefined;
     let travelled = 0;
     let lastEvent = 0;
+    let lastAbs = 0;
+    let lastDir = 0;
     let spent = false; // this gesture has already moved a card
     const onWheel = e => {
       if (Math.abs(e.deltaX) <= Math.abs(e.deltaY)) return; // vertical: let the page scroll
       e.preventDefault();
       const now = Date.now();
-      if (now - lastEvent > WHEEL_GESTURE_GAP_MS) {
+      const abs = Math.abs(e.deltaX);
+      const dir = Math.sign(e.deltaX);
+      const paused = now - lastEvent > WHEEL_GESTURE_GAP_MS;
+      const reversed = dir !== lastDir;
+      const strengthening = abs > lastAbs * 1.5 + 4;
+      if (paused || reversed || (spent && strengthening)) {
         travelled = 0;
         spent = false;
       }
       lastEvent = now;
+      lastAbs = abs;
+      lastDir = dir;
       if (spent) return;
       travelled += e.deltaX;
       if (Math.abs(travelled) >= WHEEL_PX) {
-        const dir = travelled > 0 ? 1 : -1;
         setIndex(i => (((i + dir) % n) + n) % n);
         spent = true;
       }

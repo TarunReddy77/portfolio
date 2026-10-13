@@ -17,9 +17,8 @@ export const profile = {
   initials: "TT",
   tagline: "hello world — I'm",
   summary: [
-    "MS in Artificial Intelligence (3.96 GPA) with hands-on experience building scalable distributed systems and ML-powered services on AWS for Fortune 500 clients. Skilled in cloud-native microservices (EKS, Lambda, Bedrock), CI/CD, and GenAI integration. Strong focus on operational excellence, code quality, and customer-obsessed product delivery.",
-    // Second paragraph keeps only what the first doesn't already say.
-    "Currently at PointGuard AI, building production LLM security systems: agent orchestration (LangGraph, MCP), retrieval-augmented generation, and the guardrails that keep agentic AI safe."
+    // From ~/career-ops/cv.md.
+    "AI / Software Engineer (MS in AI, Northeastern, GPA 3.96) who builds production LLM systems end-to-end, from distributed back-end services and data pipelines through the interfaces people actually use. Current work centers on enterprise LLM security: a cross-browser DLP extension, real-time guardrails, multi-agent orchestration (LangGraph, MCP), and high-throughput LLM observability. Strong CS fundamentals (data structures, algorithms, distributed systems), with a track record shipping fault-tolerant services and ML systems end-to-end on AWS and GCP."
   ],
   links: {
     github: socialMediaLinks.github,
@@ -34,64 +33,77 @@ export const profile = {
 // portfolio.js. Roles without an entry here keep their portfolio.js bullets.
 const curatedExperience = {
   "PointGuard AI": {
-    // Condensed from the Tsenta bullets and the original site bullets, which
-    // overlapped (guardrails, multi-agent orchestration, observability).
+    // Written from ~/career-ops/cv.md (the canonical fact-bank).
     bullets: [
-      'Built "Agent Mission Control": a scanner that sweeps enterprise endpoints to inventory AI agents, tools, and MCP servers, then flags malicious patterns, prompt injection, and data exfiltration.',
-      "Built a four-tier classification pipeline that discovers shadow AI and maintains a continuously crawled knowledge base of 30,000+ AI tools scored by risk.",
-      "Engineered a Guardian Agent framework that monitors every service call and tool invocation to detect and block OWASP Top 10 patterns at thousands of events per minute; trained and evaluated the detection and guardrail models (99.7% detection at a 2% false-positive rate against the OWASP LLM Top 10).",
-      "Designed stateful multi-agent microservices (LangGraph, MCP servers, REST APIs), deployed as a LiteLLM proxy plugin with zero-downtime cutover, automating threat workflows for Fortune 500 clients and cutting incident response time by 60%.",
-      "Architected observability with OpenTelemetry and ClickHouse (end-to-end tracing for audit compliance, real-time anomaly alerting) and built a React/TypeScript operations dashboard to monitor traces, system health, and security alerts."
+      'Building "Agent Mission Control", endpoint security for the agentic era: a scanner that sweeps enterprise endpoints (Windows included) to inventory AI agents, tools, skills, and MCP servers, then flags malicious patterns such as prompt injection, data exfiltration, and PII exposure. Deployed across managed Windows fleets through Microsoft Intune, streaming telemetry into ClickHouse for fleet-wide risk insights.',
+      "Architected and shipped a cross-browser AI-native security extension (Chrome, Edge) in WXT/TypeScript with per-site adapters that intercept prompts and file uploads on ChatGPT, Claude, and Gemini, backed by an MV3 service worker for on-device guardrail checks and remote policy calls. Deployed to enterprise pilots through Chrome Managed Storage and Intune.",
+      "Built a four-tier classification pipeline (fleet telemetry, known-list fast path, heuristic network interception, LLM classification of unknowns) that discovers shadow AI and publishes a continuously crawled knowledge base of 30,000+ AI websites scored by risk.",
+      "Trained and evaluated the detection and guardrail models with real-time serving, reaching 99.7% detection at a 2% false-positive rate against OWASP LLM Top 10 categories, with PII redaction and semantic guardrails integrated into the agent pipeline.",
+      "Engineered stateful multi-agent orchestration (LangGraph, MCP servers) for retrieval, policy decisioning, tool-calling, and automated rollback, deployed as a LiteLLM proxy plugin with zero-downtime cutover.",
+      "Built a high-throughput LLM observability pipeline (OpenTelemetry, ClickHouse) capturing prompt traces, agent decisions, and guardrail outcomes, with dashboards and real-time anomaly alerting.",
+      "Built a full-stack policy console (React over FastAPI and REST APIs) deployed multi-tenant on AWS and Azure, with Entra ID single sign-on through OIDC and a RAG layer over Azure AI Search."
     ],
     chips: [
       "Python",
       "TypeScript",
-      "AWS",
-      "LangGraph",
+      "React",
       "FastAPI",
-      "Docker",
+      "LangGraph",
+      "MCP",
+      "PyTorch",
       "OpenTelemetry",
       "ClickHouse",
-      "React"
+      "Azure",
+      "AWS",
+      "Docker"
     ]
   },
   HerHeard: {
     bullets: [
-      "To support healthcare providers needing real-time clinical guidance in a HIPAA-compliant setting, developed an AI-powered medical assistant on AWS Bedrock with a React/TypeScript frontend, achieving sub-200ms latency on cached and optimized query paths.",
-      "Facing unreliable single-model responses for complex medical queries, architected a stateful distributed agent system on AWS with fault-tolerant retry and fallback patterns, handling concurrent user sessions via ElastiCache-backed state management.",
-      "With clinical queries requiring reasoning across multiple data sources, implemented hybrid retrieval combining OpenSearch vector search and Neptune knowledge graphs with Amazon MSK-driven indexing, achieving 65% accuracy on multi-hop reasoning tasks.",
-      "To meet strict healthcare regulatory requirements, established AI guardrails and validation agents that blocked 97% of harmful content and achieved 78% answer faithfulness on RAGAS evaluation benchmarks while maintaining low-latency responses."
-    ],
-    chips: [
-      "AWS Bedrock",
-      "SageMaker",
-      "LangGraph",
-      "RAG",
-      "React",
-      "OpenSearch",
-      "Neptune",
-      "FastAPI",
-      "MSK",
-      "ElastiCache"
-    ]
-  },
-  Infosys: {
-    desc: "",
-    bullets: [
-      "Supporting a system handling $2B+ in daily financial transactions, developed a document intelligence platform on AWS with ETL pipelines using AWS Glue to process 100K+ unstructured legal contracts daily for Fortune 500 clients.",
-      "With manual contract review creating bottlenecks across enterprise workflows, implemented a BERT-based NER model using Hugging Face Transformers deployed on AWS EKS with auto-scaling, achieving 91% F1-score and reducing review time by 50%.",
-      "To enable fast document discovery across 10M+ records, engineered a semantic search engine with FAISS using optimized IndexIVFPQ partitioning, achieving 92% precision@5 with sub-200ms latency as the core retrieval layer of the platform.",
-      "Facing frequent model regressions in production, managed CI/CD pipelines and MLOps lifecycle with MLflow and Kubeflow, implementing automated A/B testing and drift detection that prevented 15 incidents and cut rollback time by 40%."
+      "Built an agentic medical Q&A chatbot: LangGraph orchestrating retrieval, synthesis, and validation agents behind a React front-end over FastAPI and Redis services, at sub-300ms p95 latency.",
+      "Engineered hybrid retrieval combining Pinecone vector search over medical literature with a Neo4j knowledge graph of clinical entity relationships, reaching 65% accuracy on multi-hop queries.",
+      "Fine-tuned Llama models with QLoRA and built an RLHF alignment pipeline on physician-validated preference data, improving response safety scores by 42%.",
+      "Set up the evaluation and safety layer: RAGAS answer faithfulness at 78%, Constitutional AI guardrails, and fact-checking agents that catch hallucinations before responses reach users.",
+      "Deployed the training and serving pipeline on AWS (SageMaker, Bedrock, Lambda, Fargate) and GCP Vertex AI, with continuous validation and A/B testing."
     ],
     chips: [
       "Python",
-      "Java",
-      "AWS (EKS, S3, Glue, RDS, Aurora)",
+      "PyTorch",
+      "LangGraph",
+      "Pinecone",
+      "Neo4j",
+      "Hugging Face",
+      "FastAPI",
+      "Redis",
+      "React",
+      "AWS",
+      "GCP"
+    ]
+  },
+  Infosys: {
+    desc: "Document-intelligence platform for a Fortune 500 financial-services client, plus a DevOps automation portal for Apple.",
+    bullets: [
+      "Built a document-intelligence platform processing 100K+ contracts daily, with ETL pipelines and a semantic-search API over 10M+ embeddings (FAISS IndexIVFPQ index) at 92% precision@5 and sub-200ms latency.",
+      "Fine-tuned a Legal-BERT model for named entity recognition, reaching 91% F1 and cutting manual contract review time by 50%.",
+      "Owned the ML lifecycle with MLflow and data-driven A/B testing, shipping models about 35% more accurate while drift detection prevented production incidents.",
+      "Developed full-stack features for a DevOps automation portal for Apple: an Angular/TypeScript front-end, Spring Boot REST services, and a Django reporting service managing CI/CD pipelines across internal teams.",
+      "Integrated AWS Secrets Manager and Azure Key Vault for build-time credentials, deployed services through AWS ECS, and shipped a build-failure report that surfaces failed Jenkins jobs to a central monitoring station."
+    ],
+    chips: [
+      "Python",
       "Hugging Face",
       "FAISS",
       "MLflow",
       "Docker",
-      "Kubernetes"
+      "Kubernetes",
+      "AWS",
+      "Angular",
+      "TypeScript",
+      "Spring Boot",
+      "Django",
+      "Java",
+      "PostgreSQL",
+      "Jenkins"
     ]
   },
   "Northeastern University": {
@@ -117,17 +129,16 @@ const curatedExperience = {
     ]
   },
   "IIT Hyderabad (VIGIL Lab)": {
-    // From the resume.
     role: "Computer Vision Research Intern",
     bullets: [
-      "Engineered a memory-efficient object detection pipeline for aerial images using a custom YOLOv4-OBB model in PyTorch, reducing model size by 30% and improving detection accuracy by 12% on the DOTA and VisDrone benchmark datasets.",
-      "Researched and benchmarked deep learning architectures, including dilation networks, attention modules (SE, CBAM), and EfficientNet variants, across PyTorch, TensorFlow, and Keras, using transfer learning and mixed-precision training to improve feature extraction efficiency by 18%.",
-      "Built data preprocessing and augmentation pipelines with OpenCV and torchvision.transforms, automated evaluation with Scikit-learn and TensorBoard, and ensured experiment reproducibility with Git and Weights & Biases."
+      "Benchmarked and optimized object-detection architectures (EfficientNet, YOLOv4) across PyTorch and TensorFlow, cutting inference time 30% with network pruning and quantization.",
+      "Built a reproducible experimentation framework tracking 100+ experiments (Git, W&B) with automated hyperparameter tuning, improving mAP 12% on the VisDrone benchmark.",
+      "Developed OpenCV and tf.data preprocessing with custom augmentation for diverse aerial imagery, improving generalization across weather and lighting conditions."
     ],
     chips: [
+      "Python",
       "PyTorch",
       "TensorFlow",
-      "Keras",
       "OpenCV",
       "Git",
       "Weights & Biases"

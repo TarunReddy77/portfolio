@@ -40,6 +40,10 @@ const byLabel = {
   Jenkins: "jenkins",
   Puppet: "puppet",
   OpenCV: "opencv",
+  Azure: "azure",
+  Neo4j: "neo4j",
+  Django: "django",
+  Redis: "redis",
   Keras: "keras",
   "Scikit-learn": "scikitlearn",
   spaCy: "spacy",
@@ -88,7 +92,8 @@ const darkBrand = new Set([
   "modelcontextprotocol",
   "opentelemetry",
   "apachekafka",
-  "angular"
+  "angular",
+  "django"
 ]);
 
 export function iconFor(label) {

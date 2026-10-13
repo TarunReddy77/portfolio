@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/portfolio/static/css/main.3be8e347.css",
-    "main.js": "/portfolio/static/js/main.e1935168.js",
+    "main.js": "/portfolio/static/js/main.fd81ff87.js",
     "static/media/google-python-os-coursera-cert.png": "/portfolio/static/media/google-python-os-coursera-cert.f8d0ab4ded053071b705.png",
     "static/media/nit-gold-medal-cert.png": "/portfolio/static/media/nit-gold-medal-cert.06d81efcead28ef21e9b.png",
     "static/media/google-firebase-project-coursera-cert.png": "/portfolio/static/media/google-firebase-project-coursera-cert.f41b5bf97441fe744a1e.png",
@@ -34,6 +34,7 @@
     "static/media/spacy.svg": "/portfolio/static/media/spacy.f3493588d563ac1f6497.svg",
     "static/media/gnubash.svg": "/portfolio/static/media/gnubash.41b9926f5c0dd0f64671.svg",
     "static/media/docker.svg": "/portfolio/static/media/docker.f9f97b60eb161535b80d.svg",
+    "static/media/azure.svg": "/portfolio/static/media/azure.d8c693b62a434719420e.svg",
     "static/media/nodedotjs.svg": "/portfolio/static/media/nodedotjs.dd4b66b98a4a174f0db5.svg",
     "static/media/java.svg": "/portfolio/static/media/java.a751bad6c81431ab4dd6.svg",
     "static/media/python.svg": "/portfolio/static/media/python.cd1e1de5623bcbd8c004.svg",
@@ -49,12 +50,14 @@
     "static/media/opensearch.svg": "/portfolio/static/media/opensearch.14d1da73bdd27b3ab238.svg",
     "static/media/haystack.svg": "/portfolio/static/media/haystack.6a4e8c664d48a82f8021.svg",
     "static/media/weightsandbiases.svg": "/portfolio/static/media/weightsandbiases.65440d56ca1a19584979.svg",
+    "static/media/neo4j.svg": "/portfolio/static/media/neo4j.0034a54a468d95fddf77.svg",
     "static/media/crewai.svg": "/portfolio/static/media/crewai.bfc34e37b93adff1c2bc.svg",
     "static/media/g-boxes.svg": "/portfolio/static/media/g-boxes.3bda8a75e8ebef2ede8d.svg",
     "static/media/redis.svg": "/portfolio/static/media/redis.92b12553cfd772408fbd.svg",
     "static/media/googlecloud.svg": "/portfolio/static/media/googlecloud.472684f3922a8240d0ba.svg",
     "static/media/graphql.svg": "/portfolio/static/media/graphql.520cc591fde466ac2efe.svg",
     "static/media/kubeflow.svg": "/portfolio/static/media/kubeflow.38bd0e827dc3223e2167.svg",
+    "static/media/django.svg": "/portfolio/static/media/django.0913811929f7c81f3b40.svg",
     "static/media/langchain.svg": "/portfolio/static/media/langchain.0c31e95913916f9def96.svg",
     "static/media/mongodb.svg": "/portfolio/static/media/mongodb.4a790e2582289412e0a4.svg",
     "static/media/g-sparkles.svg": "/portfolio/static/media/g-sparkles.3a8e82923a2230daa4c2.svg",
@@ -86,10 +89,10 @@
     "static/media/g-kanban.svg": "/portfolio/static/media/g-kanban.298ececc1c75389974d9.svg",
     "static/media/langgraph.svg": "/portfolio/static/media/langgraph.7e36047d7aa2f836b517.svg",
     "main.3be8e347.css.map": "/portfolio/static/css/main.3be8e347.css.map",
-    "main.e1935168.js.map": "/portfolio/static/js/main.e1935168.js.map"
+    "main.fd81ff87.js.map": "/portfolio/static/js/main.fd81ff87.js.map"
   },
   "entrypoints": [
     "static/css/main.3be8e347.css",
-    "static/js/main.e1935168.js"
+    "static/js/main.fd81ff87.js"
   ]
 }

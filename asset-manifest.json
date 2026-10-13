@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/portfolio/static/css/main.3be8e347.css",
+    "main.css": "/portfolio/static/css/main.1ab88432.css",
     "main.js": "/portfolio/static/js/main.c510240f.js",
     "static/media/google-python-os-coursera-cert.png": "/portfolio/static/media/google-python-os-coursera-cert.f8d0ab4ded053071b705.png",
     "static/media/nit-gold-medal-cert.png": "/portfolio/static/media/nit-gold-medal-cert.06d81efcead28ef21e9b.png",
@@ -88,11 +88,11 @@
     "static/media/g-infinity.svg": "/portfolio/static/media/g-infinity.ec26674247d86c749073.svg",
     "static/media/g-kanban.svg": "/portfolio/static/media/g-kanban.298ececc1c75389974d9.svg",
     "static/media/langgraph.svg": "/portfolio/static/media/langgraph.7e36047d7aa2f836b517.svg",
-    "main.3be8e347.css.map": "/portfolio/static/css/main.3be8e347.css.map",
+    "main.1ab88432.css.map": "/portfolio/static/css/main.1ab88432.css.map",
     "main.c510240f.js.map": "/portfolio/static/js/main.c510240f.js.map"
   },
   "entrypoints": [
-    "static/css/main.3be8e347.css",
+    "static/css/main.1ab88432.css",
     "static/js/main.c510240f.js"
   ]
 }

@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/portfolio/static/css/main.3be8e347.css",
-    "main.js": "/portfolio/static/js/main.fd81ff87.js",
+    "main.js": "/portfolio/static/js/main.c510240f.js",
     "static/media/google-python-os-coursera-cert.png": "/portfolio/static/media/google-python-os-coursera-cert.f8d0ab4ded053071b705.png",
     "static/media/nit-gold-medal-cert.png": "/portfolio/static/media/nit-gold-medal-cert.06d81efcead28ef21e9b.png",
     "static/media/google-firebase-project-coursera-cert.png": "/portfolio/static/media/google-firebase-project-coursera-cert.f41b5bf97441fe744a1e.png",
@@ -13,7 +13,7 @@
     "static/media/herheardLogo.png": "/portfolio/static/media/herheardLogo.71eddca816a7a29dc955.png",
     "static/media/northeasternLogo.png": "/portfolio/static/media/northeasternLogo.fb23fcdf5a6dd023bbec.png",
     "static/media/nitLogo.jpg": "/portfolio/static/media/nitLogo.b6b565b959385f6e1101.jpg",
-    "static/media/resume.pdf": "/portfolio/static/media/resume.fde9bf65b9645fadedc4.pdf",
+    "static/media/resume.pdf": "/portfolio/static/media/resume.eaeb60e939c722f498e7.pdf",
     "static/media/kaggle-data-viz-cert.png": "/portfolio/static/media/kaggle-data-viz-cert.31bd1f2f4b704da28205.png",
     "static/media/kaggle-ml-cert.png": "/portfolio/static/media/kaggle-ml-cert.7df51cccc9c80263df9c.png",
     "static/media/infosysLogo.jpg": "/portfolio/static/media/infosysLogo.4bd571f56ff50849d75b.jpg",
@@ -89,10 +89,10 @@
     "static/media/g-kanban.svg": "/portfolio/static/media/g-kanban.298ececc1c75389974d9.svg",
     "static/media/langgraph.svg": "/portfolio/static/media/langgraph.7e36047d7aa2f836b517.svg",
     "main.3be8e347.css.map": "/portfolio/static/css/main.3be8e347.css.map",
-    "main.fd81ff87.js.map": "/portfolio/static/js/main.fd81ff87.js.map"
+    "main.c510240f.js.map": "/portfolio/static/js/main.c510240f.js.map"
   },
   "entrypoints": [
     "static/css/main.3be8e347.css",
-    "static/js/main.fd81ff87.js"
+    "static/js/main.c510240f.js"
   ]
 }

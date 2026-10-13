@@ -298,11 +298,11 @@ const achievementSection = {
 
   achievementsCards: [
     {
-      title: "National Institute of Technology Institute Gold Medal",
+      title: "Institute Gold Medal",
       subtitle:
-        "National Institute of Technology Institute Gold Medal for Bachelor of Technology in Electronics and Communication Engineering",
+        "National Institute of Technology · B.Tech in Electronics and Communication Engineering",
       image: require("./assets/images/nit-gold-medal-cert.png"),
-      imageAlt: "University of Michigan Python Programming",
+      imageAlt: "Institute Gold Medal certificate",
       footerLink: [
         {
           name: "Certification",
@@ -312,8 +312,7 @@ const achievementSection = {
     },
     {
       title: "Meta Frontend Development",
-      subtitle:
-        "Meta Frontend Development course completion certificate on Coursera",
+      subtitle: "Course certificate · Coursera",
       image: require("./assets/images/meta-intro-to-frontend-coursera-cert.png"),
       imageAlt: "Meta Frontend Development",
       footerLink: [
@@ -325,7 +324,7 @@ const achievementSection = {
     },
     {
       title: "Google Firebase Project",
-      subtitle: "Google Firebase Project completion certificate on Coursera",
+      subtitle: "Project certificate · Coursera",
       image: require("./assets/images/google-firebase-project-coursera-cert.png"),
       imageAlt: "Google Firebase Project",
       footerLink: [
@@ -337,8 +336,7 @@ const achievementSection = {
     },
     {
       title: "AWS Cloud Technical Essentials",
-      subtitle:
-        "AWS Cloud Technical Essentials course completion certificate on Coursera",
+      subtitle: "Course certificate · Coursera",
       image: require("./assets/images/aws-cloud-technical-essentials-coursera-cert.png"),
       imageAlt: "AWS Cloud Technical Essentials",
       footerLink: [
@@ -350,7 +348,7 @@ const achievementSection = {
     },
     {
       title: "Kaggle Machine Learning",
-      subtitle: "Kaggle Machine Learning course completion certificate",
+      subtitle: "Course certificate · Kaggle",
       image: require("./assets/images/kaggle-ml-cert.png"),
       imageAlt: "Kaggle Machine Learning",
       footerLink: [
@@ -362,7 +360,7 @@ const achievementSection = {
     },
     {
       title: "Kaggle Data Visualization",
-      subtitle: "Kaggle Data Visualization course completion certificate",
+      subtitle: "Course certificate · Kaggle",
       image: require("./assets/images/kaggle-data-viz-cert.png"),
       imageAlt: "Kaggle Data Visualization",
       footerLink: [
@@ -374,8 +372,7 @@ const achievementSection = {
     },
     {
       title: "Google Interacting with OS using Python",
-      subtitle:
-        "Google Interacting with OS using Python course completion certificate on Coursera",
+      subtitle: "Course certificate · Coursera",
       image: require("./assets/images/google-python-os-coursera-cert.png"),
       imageAlt: "Google Interacting with OS using Python",
       footerLink: [
@@ -387,8 +384,7 @@ const achievementSection = {
     },
     {
       title: "University of Michigan Python Programming",
-      subtitle:
-        "University of Michigan Python Programming course completion certificate on Coursera",
+      subtitle: "Course certificate · Coursera",
       image: require("./assets/images/umich-python-coursera-cert.png"),
       imageAlt: "University of Michigan Python Programming",
       footerLink: [

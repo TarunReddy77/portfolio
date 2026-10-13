@@ -2,7 +2,6 @@
 // Most data still lives in ../portfolio.js; this file holds what the redesign
 // adds on top (the Tsenta profile text) and merges the two sources.
 import {
-  greeting,
   socialMediaLinks,
   workExperiences,
   skillsSection,
@@ -19,7 +18,8 @@ export const profile = {
   tagline: "hello world — I'm",
   summary: [
     "MS in Artificial Intelligence (3.96 GPA) with hands-on experience building scalable distributed systems and ML-powered services on AWS for Fortune 500 clients. Skilled in cloud-native microservices (EKS, Lambda, Bedrock), CI/CD, and GenAI integration. Strong focus on operational excellence, code quality, and customer-obsessed product delivery.",
-    greeting.subTitle
+    // Second paragraph keeps only what the first doesn't already say.
+    "Currently at PointGuard AI, building production LLM security systems: agent orchestration (LangGraph, MCP), retrieval-augmented generation, and the guardrails that keep agentic AI safe."
   ],
   links: {
     github: socialMediaLinks.github,
@@ -92,18 +92,28 @@ const tsentaExperience = {
   }
 };
 
-export const experience = workExperiences.experience.map(job => {
-  const extra = tsentaExperience[job.company] || {bullets: [], chips: []};
-  return {
-    role: job.role,
-    company: job.company,
-    date: job.date,
-    logo: job.companylogo,
-    desc: job.desc,
-    bullets: [...extra.bullets, ...(job.descBullets || [])],
-    chips: extra.chips
-  };
-});
+const MONTHS = "jan feb mar apr may jun jul aug sep oct nov dec".split(" ");
+// "Aug 2025 - Present" / "Sep 2024 – Dec 2024" -> sortable month number.
+const startOf = date => {
+  const m = /([A-Za-z]{3})[a-z]*\s+(\d{4})/.exec(date || "");
+  return m ? Number(m[2]) * 12 + MONTHS.indexOf(m[1].toLowerCase()) : 0;
+};
+
+// Newest first, by start date.
+export const experience = [...workExperiences.experience]
+  .sort((a, b) => startOf(b.date) - startOf(a.date))
+  .map(job => {
+    const extra = tsentaExperience[job.company] || {bullets: [], chips: []};
+    return {
+      role: job.role,
+      company: job.company,
+      date: job.date,
+      logo: job.companylogo,
+      desc: job.desc,
+      bullets: [...extra.bullets, ...(job.descBullets || [])],
+      chips: extra.chips
+    };
+  });
 
 // Featured project from the Tsenta profile. Pinned GitHub repos are appended
 // at runtime from profile.json.
@@ -222,6 +232,5 @@ export const certifications = achievementSection.achievementsCards.map(c => ({
   title: c.title,
   subtitle: c.subtitle,
   image: c.image,
-  imageAlt: c.imageAlt,
   url: c.footerLink && c.footerLink[0] ? c.footerLink[0].url : null
 }));

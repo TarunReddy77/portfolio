@@ -75,7 +75,9 @@ const skillsSection = {
     {skillName: "React", fontAwesomeClassname: "fab fa-react"},
     {skillName: "Node.js", fontAwesomeClassname: "fab fa-node"},
     {skillName: "FastAPI", fontAwesomeClassname: "fas fa-bolt"}, // Custom icon
-    {skillName: "LangChain", fontAwesomeClassname: "fas fa-link"}, {skillName: "LangGraph", fontAwesomeClassname: "fas fa-project-diagram"}, {skillName: "MCP", fontAwesomeClassname: "fas fa-plug"}, // Custom icon
+    {skillName: "LangChain", fontAwesomeClassname: "fas fa-link"},
+    {skillName: "LangGraph", fontAwesomeClassname: "fas fa-project-diagram"},
+    {skillName: "MCP", fontAwesomeClassname: "fas fa-plug"}, // Custom icon
     {skillName: "OpenAI", fontAwesomeClassname: "fas fa-robot"}, // Custom icon
     {skillName: "Pinecone", fontAwesomeClassname: "fas fa-database"},
     {skillName: "Docker", fontAwesomeClassname: "fab fa-docker"},
@@ -160,8 +162,21 @@ const workExperiences = {
   display: true, //Set it to true to show workExperiences Section
   experience: [
     {
-      role: "Software Engineer", company: "PointGuard AI", companylogo: require("./assets/images/pointguardLogo.png"), date: "Aug 2025 - Present", desc: "Building endpoint security and governance for the agentic era.", descBullets: ["Building \"Agent Mission Control\": a scanner that sweeps enterprise endpoints to inventory AI agents, tools, and MCP servers, then flags malicious patterns, prompt injection, and data exfiltration.", "Built a four-tier classification pipeline that discovers shadow AI and publishes a continuously-crawled knowledge base of 30,000+ AI tools scored by risk.", "Trained and evaluated detection and guardrail models: 99.7% detection at a 2% false-positive rate against the OWASP LLM Top 10.", "Engineered stateful multi-agent orchestration (LangGraph, MCP servers) deployed as a LiteLLM proxy plugin with zero-downtime cutover.", "Built a high-throughput LLM observability pipeline (OpenTelemetry, ClickHouse) with real-time anomaly alerting."] 
-    }, { role: "Full-Stack AI Engineer",
+      role: "Software Engineer",
+      company: "PointGuard AI",
+      companylogo: require("./assets/images/pointguardLogo.png"),
+      date: "Aug 2025 - Present",
+      desc: "Building endpoint security and governance for the agentic era.",
+      descBullets: [
+        'Building "Agent Mission Control": a scanner that sweeps enterprise endpoints to inventory AI agents, tools, and MCP servers, then flags malicious patterns, prompt injection, and data exfiltration.',
+        "Built a four-tier classification pipeline that discovers shadow AI and publishes a continuously-crawled knowledge base of 30,000+ AI tools scored by risk.",
+        "Trained and evaluated detection and guardrail models: 99.7% detection at a 2% false-positive rate against the OWASP LLM Top 10.",
+        "Engineered stateful multi-agent orchestration (LangGraph, MCP servers) deployed as a LiteLLM proxy plugin with zero-downtime cutover.",
+        "Built a high-throughput LLM observability pipeline (OpenTelemetry, ClickHouse) with real-time anomaly alerting."
+      ]
+    },
+    {
+      role: "Full-Stack AI Engineer",
       company: "HerHeard",
       companylogo: require("./assets/images/herheardLogo.png"), // <-- Add your logo image
       date: "Sep 2024 – Dec 2024",

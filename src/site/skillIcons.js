@@ -36,6 +36,10 @@ const byLabel = {
   DynamoDB: "dynamodb",
   OpenTelemetry: "opentelemetry",
   Git: "git",
+  Angular: "angular",
+  Jenkins: "jenkins",
+  Puppet: "puppet",
+  OpenCV: "opencv",
   Keras: "keras",
   "Scikit-learn": "scikitlearn",
   spaCy: "spacy",
@@ -83,7 +87,8 @@ const byLabel = {
 const darkBrand = new Set([
   "modelcontextprotocol",
   "opentelemetry",
-  "apachekafka"
+  "apachekafka",
+  "angular"
 ]);
 
 export function iconFor(label) {

@@ -32,7 +32,7 @@ export const profile = {
 
 // Curated bullets and tech chips, keyed by company name as it appears in
 // portfolio.js. Roles without an entry here keep their portfolio.js bullets.
-const tsentaExperience = {
+const curatedExperience = {
   "PointGuard AI": {
     // Condensed from the Tsenta bullets and the original site bullets, which
     // overlapped (guardrails, multi-agent orchestration, observability).
@@ -93,6 +93,59 @@ const tsentaExperience = {
       "Docker",
       "Kubernetes"
     ]
+  },
+  "Northeastern University": {
+    bullets: [
+      "Led a team of TAs and course operations for 200+ graduate students across 4 semesters of CS 6120: NLP.",
+      "Designed and graded assignments on transformers, embeddings, and sequence models (Python, PyTorch, Hugging Face) with automated grading workflows; ran recitations and office hours and worked with faculty on curriculum updates."
+    ],
+    chips: ["Python", "PyTorch", "Hugging Face"]
+  },
+  "Srisys Inc.": {
+    bullets: [
+      "Developed ERP extensions and cloud-based apps with Java, Spring Boot, Angular, and PostgreSQL, delivering custom features for clients in manufacturing and healthcare.",
+      "Built CI/CD pipelines with Jenkins and Puppet and integrated AWS services for scalable backend solutions."
+    ],
+    chips: [
+      "Java",
+      "Spring Boot",
+      "Angular",
+      "PostgreSQL",
+      "Jenkins",
+      "Puppet",
+      "AWS"
+    ]
+  },
+  "IIT Hyderabad (VIGIL Lab)": {
+    // From the resume.
+    role: "Computer Vision Research Intern",
+    bullets: [
+      "Engineered a memory-efficient object detection pipeline for aerial images using a custom YOLOv4-OBB model in PyTorch, reducing model size by 30% and improving detection accuracy by 12% on the DOTA and VisDrone benchmark datasets.",
+      "Researched and benchmarked deep learning architectures, including dilation networks, attention modules (SE, CBAM), and EfficientNet variants, across PyTorch, TensorFlow, and Keras, using transfer learning and mixed-precision training to improve feature extraction efficiency by 18%.",
+      "Built data preprocessing and augmentation pipelines with OpenCV and torchvision.transforms, automated evaluation with Scikit-learn and TensorBoard, and ensured experiment reproducibility with Git and Weights & Biases."
+    ],
+    chips: [
+      "PyTorch",
+      "TensorFlow",
+      "Keras",
+      "OpenCV",
+      "Git",
+      "Weights & Biases"
+    ]
+  },
+  "IIT Indore|Research Associate": {
+    bullets: [
+      "Developed a DSP hardware IP piracy-prevention method that generates palmprint-biometric digital signatures and embeds them in RTL designs by altering register allocation.",
+      "Published the work in IEEE Transactions on Consumer Electronics (peer-reviewed); collaborated with interdisciplinary teams to validate the approach and document a reproducible design methodology."
+    ],
+    chips: []
+  },
+  "IIT Indore|Research Intern": {
+    bullets: [
+      "Worked on transient fault tolerance in DSP cores using compiler-driven transformations and simulated annealing for floorplanning optimization.",
+      "Applied AI search methods (hill climbing, particle swarm optimization) to improve delay, area, and power in VLSI systems, contributing to ongoing research on DSP core reliability and efficiency."
+    ],
+    chips: []
   }
 };
 
@@ -107,9 +160,10 @@ const startOf = date => {
 export const experience = [...workExperiences.experience]
   .sort((a, b) => startOf(b.date) - startOf(a.date))
   .map(job => {
-    const extra = tsentaExperience[job.company] || {bullets: [], chips: []};
+    const extra = curatedExperience[`${job.company}|${job.role}`] ||
+      curatedExperience[job.company] || {bullets: [], chips: []};
     return {
-      role: job.role,
+      role: extra.role || job.role,
       company: job.company,
       date: job.date,
       logo: job.companylogo,

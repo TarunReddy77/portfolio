@@ -215,6 +215,13 @@ export const featuredProjects = [
       "RLHF",
       "Weights & Biases"
     ]
+  },
+  {
+    title: "AI Tool Recommender",
+    eyebrow: "In progress",
+    description:
+      "A recommender that suggests AI tools from interaction and content signals: a two-tower embedding retrieval model for candidate generation over a Pinecone ANN index, benchmarked against a collaborative-filtering (matrix-factorization) baseline. Two-stage retrieval and ranking with a learned ranking layer over content and behavioral features, served via FastAPI with Redis embedding caching and evaluated on Recall@K and NDCG@K.",
+    chips: ["PyTorch", "FAISS", "Pinecone", "Redis", "FastAPI"]
   }
 ];
 

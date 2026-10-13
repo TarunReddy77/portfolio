@@ -517,7 +517,7 @@ body {
 
 .chip {
   padding: 3px 11px;
-  border-radius: 999px;
+  border-radius: 15px; // fully round for one line, tidy box when text wraps
   background: var(--chip-bg);
   border: 1px solid var(--chip-border);
   display: inline-flex;

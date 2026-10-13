@@ -212,7 +212,7 @@ const workExperiences = {
       role: "Research Intern",
       company: "IIT Hyderabad (VIGIL Lab)",
       companylogo: require("./assets/images/iithLogo.png"), // <-- Add your logo image
-      date: "Aug 2021 – Feb 2022",
+      date: "Mar 2021 – Aug 2021",
       desc: "Computer Vision with Prof. Dr. Chalavadi Krishna Mohan.",
       descBullets: [
         "Conducted research on object detection, dilation, and attention networks using PyTorch, TensorFlow, Keras, and OpenCV; contributed to computer vision advancements.",

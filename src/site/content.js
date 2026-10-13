@@ -30,15 +30,18 @@ export const profile = {
   }
 };
 
-// Bullets and tech chips from the Tsenta profile, keyed by company name as it
-// appears in portfolio.js. They are listed first, then the existing bullets.
+// Curated bullets and tech chips, keyed by company name as it appears in
+// portfolio.js. Roles without an entry here keep their portfolio.js bullets.
 const tsentaExperience = {
   "PointGuard AI": {
+    // Condensed from the Tsenta bullets and the original site bullets, which
+    // overlapped (guardrails, multi-agent orchestration, observability).
     bullets: [
-      "With Fortune 500 clients facing slow manual security operations across multiple enterprise systems, designed and deployed multi-agent microservices using LangGraph and REST APIs to automate threat workflows, reducing incident response time by 60%.",
-      "To address limited visibility into distributed agent behavior across client deployments, built a React/TypeScript real-time operations dashboard enabling cross-functional teams to monitor traces, visualize system health, and drill down into security alerts.",
-      "With growing attack surface across production LLM services, engineered a Guardian Agent framework monitoring all service calls and tool invocations to automatically detect and block OWASP Top 10 patterns, processing thousands of events per minute.",
-      "Lacking end-to-end tracing for audit compliance across microservices, architected observability infrastructure using OpenTelemetry and ClickHouse, enabling operational troubleshooting and continuous performance optimization of production pipelines."
+      'Built "Agent Mission Control": a scanner that sweeps enterprise endpoints to inventory AI agents, tools, and MCP servers, then flags malicious patterns, prompt injection, and data exfiltration.',
+      "Built a four-tier classification pipeline that discovers shadow AI and maintains a continuously crawled knowledge base of 30,000+ AI tools scored by risk.",
+      "Engineered a Guardian Agent framework that monitors every service call and tool invocation to detect and block OWASP Top 10 patterns at thousands of events per minute; trained and evaluated the detection and guardrail models (99.7% detection at a 2% false-positive rate against the OWASP LLM Top 10).",
+      "Designed stateful multi-agent microservices (LangGraph, MCP servers, REST APIs), deployed as a LiteLLM proxy plugin with zero-downtime cutover, automating threat workflows for Fortune 500 clients and cutting incident response time by 60%.",
+      "Architected observability with OpenTelemetry and ClickHouse (end-to-end tracing for audit compliance, real-time anomaly alerting) and built a React/TypeScript operations dashboard to monitor traces, system health, and security alerts."
     ],
     chips: [
       "Python",
@@ -73,6 +76,7 @@ const tsentaExperience = {
     ]
   },
   Infosys: {
+    desc: "",
     bullets: [
       "Supporting a system handling $2B+ in daily financial transactions, developed a document intelligence platform on AWS with ETL pipelines using AWS Glue to process 100K+ unstructured legal contracts daily for Fortune 500 clients.",
       "With manual contract review creating bottlenecks across enterprise workflows, implemented a BERT-based NER model using Hugging Face Transformers deployed on AWS EKS with auto-scaling, achieving 91% F1-score and reducing review time by 50%.",
@@ -109,8 +113,9 @@ export const experience = [...workExperiences.experience]
       company: job.company,
       date: job.date,
       logo: job.companylogo,
-      desc: job.desc,
-      bullets: [...extra.bullets, ...(job.descBullets || [])],
+      desc: extra.desc !== undefined ? extra.desc : job.desc,
+      // Where bullets were curated above they replace the original site text.
+      bullets: extra.bullets.length ? extra.bullets : job.descBullets || [],
       chips: extra.chips
     };
   });
@@ -132,6 +137,19 @@ export const featuredProjects = [
       "MCP",
       "Docker"
     ]
+  },
+  {
+    title: "Domain-Specific LLM Alignment via RLHF",
+    eyebrow: "Feb – Apr 2024",
+    description:
+      "Fine-tuned and aligned a language model for biomedical knowledge extraction using Reinforcement Learning from Human Feedback (RLHF), leveraging expert-annotated datasets to calibrate responses for target discovery and literature triage. Built a prompt-engineering and feedback loop for iterative refinement, integrating conformal prediction and uncertainty quantification to improve factual accuracy, reduce hallucinations, and sharpen scientific retrieval precision.",
+    chips: [
+      "Python",
+      "Hugging Face Transformers",
+      "PyTorch",
+      "RLHF",
+      "Weights & Biases"
+    ]
   }
 ];
 
@@ -151,7 +169,7 @@ const tsentaSkills = [
   {
     group: "Cloud & Infra",
     items: [
-      "AWS (EKS, S3, Glue, Lambda, SageMaker, Bedrock, CloudWatch)",
+      "AWS (EKS, Fargate, S3, Glue, Lambda, SageMaker, Bedrock, CloudWatch)",
       "GCP",
       "Docker",
       "Kubernetes",
@@ -168,7 +186,11 @@ const tsentaSkills = [
       "Strands Agents",
       "RAG",
       "Fine-tuning",
-      "RLHF"
+      "RLHF",
+      "Keras",
+      "Scikit-learn",
+      "spaCy",
+      "Haystack"
     ]
   },
   {
@@ -194,6 +216,11 @@ const tsentaSkills = [
       "FAISS",
       "OpenSearch",
       "DynamoDB",
+      "Milvus",
+      "Qdrant",
+      "Weaviate",
+      "Pinecone",
+      "Elasticsearch",
       "ETL"
     ]
   },
@@ -203,6 +230,8 @@ const tsentaSkills = [
       "MLflow",
       "Kubeflow",
       "OpenTelemetry",
+      "DVC",
+      "Weights & Biases",
       "Bedrock AgentCore",
       "Git",
       "Agile/Scrum",

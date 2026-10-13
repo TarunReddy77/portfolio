@@ -205,6 +205,21 @@ export const featuredProjects = [
     ]
   },
   {
+    title: "Skill Scanner",
+    eyebrow: "In progress",
+    url: "https://github.com/TarunReddy77/skill-scanner",
+    description:
+      "An AI agent that reads an agent skill (SKILL.md) and decides whether it is malicious or benign, returning a typed verdict with a confidence score and quoted evidence. Skills are instructions that coding agents follow automatically, so a poisoned one can quietly steal credentials. The skill is treated as untrusted input, file access is restricted to SKILL.md, and every run is traced to Langfuse. Includes a FastAPI web UI.",
+    chips: [
+      "Python",
+      "Strands Agents SDK",
+      "Amazon Bedrock",
+      "Langfuse",
+      "FastAPI",
+      "Pydantic"
+    ]
+  },
+  {
     title: "Domain-Specific LLM Alignment via RLHF",
     url: "https://github.com/TarunReddy77/rlhf-biomedical-alignment",
     eyebrow: "Feb – Apr 2024",

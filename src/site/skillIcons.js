@@ -75,6 +75,8 @@ const byLabel = {
   "Strands Agents": "g-bot",
   "Strands Agents SDK": "g-bot",
   "A2A Protocol": "g-messages-square",
+  Langfuse: "g-activity",
+  Pydantic: "g-shield-check",
   RAG: "g-library",
   "Fine-tuning": "g-sliders-horizontal",
   RLHF: "g-thumbs-up",

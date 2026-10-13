@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/portfolio/static/css/main.1ab88432.css",
-    "main.js": "/portfolio/static/js/main.eb72767d.js",
+    "main.js": "/portfolio/static/js/main.c8a9c319.js",
     "static/media/google-python-os-coursera-cert.png": "/portfolio/static/media/google-python-os-coursera-cert.f8d0ab4ded053071b705.png",
     "static/media/nit-gold-medal-cert.png": "/portfolio/static/media/nit-gold-medal-cert.06d81efcead28ef21e9b.png",
     "static/media/google-firebase-project-coursera-cert.png": "/portfolio/static/media/google-firebase-project-coursera-cert.f41b5bf97441fe744a1e.png",
@@ -68,6 +68,7 @@
     "static/media/g-messages-square.svg": "/portfolio/static/media/g-messages-square.ba9365a278eeda8693cb.svg",
     "static/media/g-waypoints.svg": "/portfolio/static/media/g-waypoints.bbfa2098642b0bfb80da.svg",
     "static/media/g-webhook.svg": "/portfolio/static/media/g-webhook.2d3a168d0e3858c86242.svg",
+    "static/media/g-shield-check.svg": "/portfolio/static/media/g-shield-check.3389938fea82e698c5ef.svg",
     "static/media/g-sliders-horizontal.svg": "/portfolio/static/media/g-sliders-horizontal.26c5a66e45c8f2f013b5.svg",
     "static/media/g-thumbs-up.svg": "/portfolio/static/media/g-thumbs-up.e2b4b30b31a41ab019d0.svg",
     "static/media/mlflow.svg": "/portfolio/static/media/mlflow.134379e5e3671f9d1b65.svg",
@@ -77,6 +78,7 @@
     "static/media/html5.svg": "/portfolio/static/media/html5.74577817dde8fee285d3.svg",
     "static/media/g-bot.svg": "/portfolio/static/media/g-bot.05409f5852391ec90752.svg",
     "static/media/puppet.svg": "/portfolio/static/media/puppet.3e668bf2e3a214c573e3.svg",
+    "static/media/g-activity.svg": "/portfolio/static/media/g-activity.ad6e83150a435dc7d71e.svg",
     "static/media/g-workflow.svg": "/portfolio/static/media/g-workflow.1d5a7579b2e2613604bb.svg",
     "static/media/angular.svg": "/portfolio/static/media/angular.4d1f62dfcb60b225c0bb.svg",
     "static/media/tensorflow.svg": "/portfolio/static/media/tensorflow.0f12719d87f6a56a8bc8.svg",
@@ -89,10 +91,10 @@
     "static/media/g-kanban.svg": "/portfolio/static/media/g-kanban.298ececc1c75389974d9.svg",
     "static/media/langgraph.svg": "/portfolio/static/media/langgraph.7e36047d7aa2f836b517.svg",
     "main.1ab88432.css.map": "/portfolio/static/css/main.1ab88432.css.map",
-    "main.eb72767d.js.map": "/portfolio/static/js/main.eb72767d.js.map"
+    "main.c8a9c319.js.map": "/portfolio/static/js/main.c8a9c319.js.map"
   },
   "entrypoints": [
     "static/css/main.1ab88432.css",
-    "static/js/main.eb72767d.js"
+    "static/js/main.c8a9c319.js"
   ]
 }

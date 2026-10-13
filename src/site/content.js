@@ -190,6 +190,7 @@ export const experience = [...workExperiences.experience]
 export const featuredProjects = [
   {
     title: "Multi-Agent Code Review System",
+    url: "https://github.com/TarunReddy77/multi-agent-code-review",
     eyebrow: "Featured",
     description:
       "To address limitations of traditional static analysis missing edge cases in code reviews, architected a distributed multi-agent system using Strands Agents SDK with A2A protocol and CrewAI, identifying 40% more defects than conventional tools. Implemented an A2A server-client architecture deployed on Bedrock AgentCore with Docker containers and GitHub MCP integration for automated pull request reviews with quality gates.",
@@ -205,6 +206,7 @@ export const featuredProjects = [
   },
   {
     title: "Domain-Specific LLM Alignment via RLHF",
+    url: "https://github.com/TarunReddy77/rlhf-biomedical-alignment",
     eyebrow: "Feb – Apr 2024",
     description:
       "Fine-tuned and aligned a language model for biomedical knowledge extraction using Reinforcement Learning from Human Feedback (RLHF), leveraging expert-annotated datasets to calibrate responses for target discovery and literature triage. Built a prompt-engineering and feedback loop for iterative refinement, integrating conformal prediction and uncertainty quantification to improve factual accuracy, reduce hallucinations, and sharpen scientific retrieval precision.",
@@ -218,6 +220,7 @@ export const featuredProjects = [
   },
   {
     title: "AI Tool Recommender",
+    url: "https://github.com/TarunReddy77/ai-tool-recommender",
     eyebrow: "In progress",
     description:
       "A recommender that suggests AI tools from interaction and content signals: a two-tower embedding retrieval model for candidate generation over a Pinecone ANN index, benchmarked against a collaborative-filtering (matrix-factorization) baseline. Two-stage retrieval and ranking with a learned ranking layer over content and behavioral features, served via FastAPI with Redis embedding caching and evaluated on Recall@K and NDCG@K.",
